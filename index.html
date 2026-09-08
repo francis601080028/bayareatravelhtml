@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f6f1" />
+  <title>美国西海岸旅行计划 · 2026</title>
+  <style>
+    :root{
+      --ink:#102e39;--teal:#25839a;--teal2:#7cc1ca;--paper:#f7f7f2;--white:#fff;
+      --muted:#647177;--line:#dbe2df;--navy:#0d2c38;--cream:#f2eddf;--sage:#dfe9df;
+      --warn:#f8e8df;--warnInk:#a65d42;--shadow:0 18px 45px rgba(16,46,57,.10);
+      --max:1120px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"SF Pro Text","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:linear-gradient(rgba(16,46,57,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(16,46,57,.018) 1px,transparent 1px);background-size:100% 58px,64px 100%;z-index:-1}
+    a{color:inherit}.shell{max-width:var(--max);margin:auto;padding:0 28px}.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:800}.section{padding:84px 0;border-top:1px solid rgba(16,46,57,.08)}
+    h1,h2,h3,p{margin-top:0}h1{font-size:clamp(52px,9vw,104px);line-height:.92;letter-spacing:-.065em;margin:15px 0 28px;font-weight:900}h2{font-size:clamp(38px,6vw,68px);line-height:1;letter-spacing:-.05em;margin:10px 0 30px}h3{font-size:25px;line-height:1.25}.muted{color:var(--muted)}
+    .topbar{height:70px;background:rgba(247,247,242,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}.nav{height:100%;display:flex;align-items:center;gap:32px}.brand{font-weight:900;letter-spacing:.08em;margin-right:auto}.brand span{font-weight:500;color:var(--muted)}.links{display:flex;gap:26px}.links a{text-decoration:none;font-size:14px;color:#46575d}.links a:hover{color:var(--teal)}
+    .hero{padding:86px 0 72px}.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:end}.date{font:600 clamp(19px,3vw,28px)/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}.hero-note{border-left:2px solid var(--teal2);padding-left:22px;color:var(--muted)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px}.count{font:500 14px/1 ui-monospace,monospace;letter-spacing:.18em;color:#394a50;white-space:nowrap}
+    .cards-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(360px,1fr);gap:18px;overflow:auto;padding:4px 2px 18px;scroll-snap-type:x mandatory}.cards-scroll::-webkit-scrollbar{height:6px}.cards-scroll::-webkit-scrollbar-thumb{background:var(--teal2);border-radius:9px}
+    .flight{scroll-snap-align:start;background:var(--navy);color:white;border-radius:36px;padding:34px;min-height:410px;box-shadow:var(--shadow);display:flex;flex-direction:column}.flight.pending{background:#173945}.flight-num{font:600 13px ui-monospace,monospace;letter-spacing:.17em;color:#c4e5e9}.flight-route{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin:32px 0 24px}.airport{font:800 clamp(38px,6vw,58px)/1 ui-monospace,monospace}.airport:last-child{text-align:right}.city{font-size:13px;color:#c5d3d7;margin-top:8px}.airport:last-child .city{text-align:right}.plane-line{width:70px;height:1px;background:#72a9b5;position:relative}.plane-line:after{content:"→";position:absolute;right:-2px;top:-14px;color:#a3d8df;font-size:22px}.flight-meta{display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:14px;color:#d7e1e3;margin-top:auto}.big-time{border-top:1px solid rgba(255,255,255,.22);padding-top:24px;margin-top:26px}.big-time b{display:block;font:800 clamp(25px,5vw,43px) ui-monospace,monospace;margin-top:4px}.badge{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:6px 11px;font-size:12px;font-weight:700;background:#e8f1ee;color:#526b59}.badge.warn{background:var(--warn);color:var(--warnInk)}.badge.blue{background:#e3f2f4;color:#216f80}
+    .route-wrap{background:#f5f0e5;border:1px solid #ded8c9;border-radius:36px;padding:32px;overflow:hidden;box-shadow:var(--shadow)}.route-layout{display:grid;grid-template-columns:1fr 330px;gap:25px}.route-map{min-height:570px;position:relative;background:radial-gradient(circle at 25% 30%,rgba(103,164,176,.20),transparent 35%),linear-gradient(155deg,#fbf8ef,#ecebdc);border-radius:26px;overflow:hidden}.route-map svg{position:absolute;inset:0;width:100%;height:100%}.route-list{display:flex;flex-direction:column;justify-content:center;gap:12px}.stop-card{background:rgba(255,255,255,.72);border:1px solid rgba(16,46,57,.1);border-radius:18px;padding:15px 17px;display:flex;gap:13px;align-items:center}.stop-num{width:29px;height:29px;background:var(--ink);color:white;border-radius:50%;display:grid;place-items:center;font:700 13px ui-monospace,monospace;flex:0 0 auto}.stop-card b{display:block}.stop-card small{color:var(--muted)}
+    .timeline{position:relative;margin-top:12px}.timeline:before{content:"";position:absolute;left:15px;top:24px;bottom:30px;width:1px;background:#bdccc8}.day{position:relative;padding:0 0 0 68px;border-bottom:1px solid var(--line)}.day:before{content:"";position:absolute;left:7px;top:35px;width:15px;height:15px;border:1px solid #8fa29d;border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 4px var(--paper)}.day.open:before{background:var(--teal2)}.day-head{width:100%;padding:26px 0;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:none;border:0;text-align:left;color:inherit;cursor:pointer}.day-title{font-size:24px;font-weight:850;line-height:1.35}.day-kicker{color:var(--teal);font:700 13px ui-monospace,monospace;letter-spacing:.12em}.plus{width:48px;height:48px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--teal);font-size:24px;transition:.2s}.day.open .plus{transform:rotate(45deg)}.day-body{display:none;padding:0 70px 30px 0}.day.open .day-body{display:block}.event{display:grid;grid-template-columns:90px 18px 1fr;gap:12px;margin:18px 0}.event-time{color:#526168}.event-dot{width:16px;height:16px;border:3px solid var(--teal);border-radius:50%;margin-top:4px;background:var(--paper)}.place{display:inline-flex;text-decoration:none;border:1px solid #bcd2d2;background:#f1f8f7;border-radius:99px;padding:7px 12px;margin:9px 6px 0 0;color:#176475;font-size:13px;font-weight:700}.note{background:#fff4ea;border:1px solid #e9c8b2;border-radius:16px;padding:16px;margin-top:14px;color:#754431}.note strong{display:block;color:#a45f43}
+    .drive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.dark-card{background:var(--navy);color:white;border-radius:30px;padding:32px;box-shadow:var(--shadow)}.dark-card h3{font-size:28px}.specs{display:grid;grid-template-columns:110px 1fr;gap:16px;margin:28px 0}.specs .label{font:600 13px ui-monospace,monospace;color:#b7d2d8;letter-spacing:.08em}.price-row{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;display:flex;justify-content:space-between;align-items:end}.price-row b{font:800 30px ui-monospace,monospace}.tabs{display:flex;border-bottom:1px solid var(--line);margin-top:16px;overflow:auto}.tab{border:0;background:none;padding:16px 20px;cursor:pointer;color:var(--muted);white-space:nowrap}.tab.active{color:var(--ink);font-weight:800;border-bottom:2px solid var(--teal)}.tab-pane{display:none;padding-top:10px}.tab-pane.active{display:block}.bullets{padding:0;list-style:none}.bullets li{padding:16px 5px;border-bottom:1px solid var(--line)}.bullets li:before{content:"•";color:var(--teal2);margin-right:14px}
+    .stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.stay{background:white;border:1px solid var(--line);border-radius:25px;padding:25px;min-height:240px;display:flex;flex-direction:column}.stay .dates{font:700 13px ui-monospace,monospace;color:var(--teal)}.stay h3{margin:15px 0 7px}.stay .status{margin-top:auto;padding-top:20px}
+    .todo-box{max-width:760px}.todo-add{display:grid;grid-template-columns:1fr 100px;gap:12px}.todo-add input{border:1px solid var(--line);border-radius:18px;padding:18px;font:inherit;background:white}.todo-add button,.primary{border:0;background:var(--navy);color:white;border-radius:18px;font-weight:800;cursor:pointer}.todo-list{margin-top:24px}.todo{display:grid;grid-template-columns:30px 1fr auto;gap:14px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line)}.todo input{appearance:none;width:26px;height:26px;border:1px solid #7c9998;border-radius:8px;display:grid;place-items:center}.todo input:checked{background:var(--teal)}.todo input:checked:after{content:"✓";color:white}.todo.done span{text-decoration:line-through;color:#96a09e}.delete{border:0;background:none;color:#b17b69;cursor:pointer}
+    .missing{background:#eaf3f1;border-radius:30px;padding:28px;margin-top:38px}.missing h3{margin-bottom:8px}.missing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 28px}.missing-item{padding:11px 0;border-bottom:1px dashed #bfd1cd}
+    footer{padding:45px 0 70px;border-top:1px solid var(--line);font:600 13px ui-monospace,monospace;display:flex;justify-content:space-between;color:#526168}
+    @media(max-width:800px){.shell{padding:0 20px}.topbar{height:auto}.nav{height:auto;display:block;padding:16px 0 0}.brand{margin-bottom:12px}.links{overflow:auto;margin:0 -20px;padding:0 20px 12px;gap:22px}.hero{padding-top:60px}.hero-grid,.route-layout,.drive-grid,.stay-grid{grid-template-columns:1fr}.route-list{display:grid;grid-template-columns:1fr 1fr}.route-map{min-height:470px}.cards-scroll{grid-auto-columns:88%}.section{padding:62px 0}.day{padding-left:47px}.timeline:before{left:10px}.day:before{left:2px}.day-title{font-size:20px}.day-body{padding-right:0}.event{grid-template-columns:65px 16px 1fr}.missing-grid{grid-template-columns:1fr}.section-head{align-items:start}.flight{padding:26px;min-height:380px}.airport{font-size:38px}}
+    @media(max-width:480px){h1{font-size:56px}.route-list{grid-template-columns:1fr}.route-map{min-height:410px}.cards-scroll{grid-auto-columns:94%}.event{grid-template-columns:1fr}.event-dot{display:none}.todo-add{grid-template-columns:1fr 82px}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="shell nav">
+    <div class="brand">US / WEST <span>· 2026</span></div>
+    <nav class="links"><a href="#flights">航班</a><a href="#route">路线</a><a href="#days">行程</a><a href="#drive">自驾</a><a href="#stays">住宿</a><a href="#todo">Todo</a></nav>
+  </div>
+</header>
+<main>
+  <section class="hero"><div class="shell hero-grid">
+    <div><div class="eyebrow">Silicon Valley — Yosemite — Seattle</div><h1>美国<br>西海岸</h1><div class="date">9月25日 — 10月9日 · 15天</div></div>
+    <div class="hero-note"><b>旅行主题</b><br>AI 产品与创业连接、Stanford 学习、湾区生活体验、Yosemite 自然与西雅图科技生态。</div>
+  </div></section>
+
+  <section id="flights" class="section"><div class="shell">
+    <div class="section-head"><div><div class="eyebrow">Boarding</div><h2>航班行程</h2></div><div class="count">3 LEGS</div></div>
+    <div class="cards-scroll">
+      <article class="flight"><div class="flight-num">FLIGHT 01 / 03 · 待补航班号</div><div class="flight-route"><div><div class="airport">CN</div><div class="city">中国出发城市待补</div></div><div class="plane-line"></div><div class="airport">SFO<div class="city">旧金山</div></div></div><div class="flight-meta"><div>9月25日<br><b>出发时间待补</b></div><div style="text-align:right">当地时间<br><b>14:00 抵达</b></div></div><div class="big-time"><span>距离抵达硅谷</span><b id="countdown">计算中…</b></div></article>
+      <article class="flight pending"><div class="flight-num">FLIGHT 02 / 03 · 待预订</div><div class="flight-route"><div><div class="airport">SFO</div><div class="city">旧金山</div></div><div class="plane-line"></div><div class="airport">SEA<div class="city">西雅图</div></div></div><div class="flight-meta"><div>10月6日<br><b>建议 17:30 后</b></div><div style="text-align:right">托运行李<br><b>待确认</b></div></div><div class="big-time"><span>行程原则</span><b>Yosemite → SEA</b></div></article>
+      <article class="flight pending"><div class="flight-num">FLIGHT 03 / 03 · 待补</div><div class="flight-route"><div><div class="airport">SEA</div><div class="city">西雅图</div></div><div class="plane-line"></div><div class="airport">CN<div class="city">中国目的地待补</div></div></div><div class="flight-meta"><div>10月9日<br><b>时间待补</b></div><div style="text-align:right">航空公司<br><b>待补</b></div></div><div class="big-time"><span>提醒</span><b>国际段提前到场</b></div></article>
+    </div>
+  </div></section>
+
+  <section id="route" class="section"><div class="shell">
+    <div class="section-head"><div><div class="eyebrow">The Whole Journey</div><h2>本次旅程</h2></div><div class="count">15 DAYS</div></div>
+    <div class="route-wrap"><div class="route-layout">
+      <div class="route-map">
+        <svg viewBox="0 0 600 720" role="img" aria-label="美国西海岸旅行路线示意图">
+          <defs><filter id="soft"><feGaussianBlur stdDeviation="9"/></filter></defs>
+          <path d="M150 54C245 32 362 53 410 107c46 51 45 118 15 171-22 39-25 89 1 132 45 77 18 158-48 204-83 57-187 52-251-10-60-58-67-147-22-220 29-48 29-91 1-140-40-70-31-151 44-190Z" fill="#f8f4e8" stroke="#84928a" stroke-width="2"/>
+          <path d="M184 592C226 540 254 482 278 416S321 283 355 201" fill="none" stroke="#133f73" stroke-width="5" stroke-linecap="round"/>
+          <path d="M355 201C388 145 413 104 434 69" fill="none" stroke="#133f73" stroke-width="5" stroke-linecap="round" stroke-dasharray="8 10"/>
+          <path d="M278 416C330 432 363 466 386 514" fill="none" stroke="#25839a" stroke-width="4" stroke-dasharray="7 8"/>
+          <g fill="#d3e8e6" opacity=".7"><ellipse cx="104" cy="331" rx="48" ry="107"/><ellipse cx="456" cy="354" rx="64" ry="117"/><ellipse cx="394" cy="116" rx="38" ry="65"/></g>
+          <g font-family="sans-serif" font-size="16" fill="#102e39">
+            <circle cx="184" cy="592" r="15" fill="#102e39"/><text x="179" y="598" fill="white">1</text><text x="205" y="596" font-weight="700">San Francisco / SFO</text>
+            <circle cx="220" cy="532" r="15" fill="#102e39"/><text x="215" y="538" fill="white">2</text><text x="241" y="535" font-weight="700">Palo Alto · Stanford</text>
+            <circle cx="278" cy="416" r="15" fill="#102e39"/><text x="273" y="422" fill="white">3</text><text x="299" y="420" font-weight="700">Oakdale</text>
+            <circle cx="355" cy="201" r="15" fill="#102e39"/><text x="350" y="207" fill="white">4</text><text x="376" y="204" font-weight="700">Yosemite</text>
+            <circle cx="434" cy="69" r="15" fill="#102e39"/><text x="429" y="75" fill="white">5</text><text x="455" y="74" font-weight="700">Seattle</text>
+          </g>
+          <g opacity=".34" fill="#526b59"><path d="m116 128 12-27 12 27h-8v20h-8v-20z"/><path d="m465 243 12-27 12 27h-8v20h-8v-20z"/><path d="m105 478 12-27 12 27h-8v20h-8v-20z"/></g>
+        </svg>
+      </div>
+      <div class="route-list">
+        <div class="stop-card"><span class="stop-num">1</span><div><b>SFO / 旧金山</b><small>入境、取车、AI Week</small></div></div>
+        <div class="stop-card"><span class="stop-num">2</span><div><b>Palo Alto / Stanford</b><small>9晚固定基地、课程与会议</small></div></div>
+        <div class="stop-card"><span class="stop-num">3</span><div><b>Oakdale</b><small>10/3 山脚前中转</small></div></div>
+        <div class="stop-card"><span class="stop-num">4</span><div><b>Yosemite</b><small>自驾观景＋短途徒步</small></div></div>
+        <div class="stop-card"><span class="stop-num">5</span><div><b>Seattle</b><small>Amazon、AI2、Microsoft生态</small></div></div>
+      </div>
+    </div></div>
+    <p class="muted" style="margin-top:16px">路线为行程示意；实际驾驶请使用当天 Google Maps，并复查道路、野火、天气和管制。</p>
+  </div></section>
+
+  <section id="days" class="section"><div class="shell">
+    <div class="section-head"><div><div class="eyebrow">Day by Day</div><h2>每日行程</h2></div><div class="count">15 DAYS</div></div>
+    <div id="timeline" class="timeline"></div>
+  </div></section>
+
+  <section id="drive" class="section"><div class="shell">
+    <div class="section-head"><div><div class="eyebrow">On the Road</div><h2>自驾信息</h2></div><div class="count">2 RENTALS</div></div>
+    <div class="drive-grid">
+      <article class="dark-card"><span class="badge blue">方案基本确定 · 订单待补</span><h3 style="margin-top:18px">Avis · Kia Soul 或同组</h3><p style="color:#c4d4d8">小型轿车 / 自动挡 / 适合城市停车</p><div class="specs"><div class="label">PICK UP</div><div><b>9月25日 15:00</b><br>SFO 旧金山国际机场</div><div class="label">RETURN</div><div><b>9月28日 15:00</b><br>Mountain View / Crowne Plaza 附近门店</div></div><div class="price-row"><span>加强险约 ¥28/天<br><small>建议升级优享保障</small></span><b>约 ¥1,100</b></div></article>
+      <article class="dark-card"><span class="badge warn">待预订</span><h3 style="margin-top:18px">Yosemite 段租车</h3><p style="color:#c4d4d8">车型 / 公司 / 价格待补充</p><div class="specs"><div class="label">PICK UP</div><div><b>10月3日上午</b><br>Palo Alto / Mountain View 优先</div><div class="label">RETURN</div><div><b>10月6日中午前</b><br>SFO 或最终起飞机场</div></div><div class="price-row"><span>路线</span><b style="font-size:20px">Stanford → Yosemite → Airport</b></div></article>
+    </div>
+    <div class="tabs" data-tabs><button class="tab active" data-tab="check">取还车检查</button><button class="tab" data-tab="insurance">订单保障</button><button class="tab" data-tab="rules">驾驶提醒</button></div>
+    <div id="check" class="tab-pane active"><ul class="bullets"><li>取车时录像：车身四周、轮胎、玻璃、里程、油量和仪表盘。</li><li>确认倒车影像、后备箱遮物帘、充电接口和备胎/补胎工具。</li><li>异地还车确认门店营业时间、还车箱规则及最终地址。</li></ul></div>
+    <div id="insurance" class="tab-pane"><ul class="bullets"><li>加强保障：车行碰撞与盗抢 0 起赔额＋加强第三者责任。</li><li>优享保障：再由国内保险补充玻璃、轮胎、底盘、道路救援等；通常可能先垫付后理赔。</li><li>下单后保存保险凭证，并确认第三者责任具体保额。</li></ul></div>
+    <div id="rules" class="tab-pane"><ul class="bullets"><li>旧金山停车时车内完全清空，包括购物袋、充电线和后备箱可见物。</li><li>Yosemite 不夜开山路；10/3 只开到 Oakdale，10/4 白天进山。</li><li>出发前一天复查 NPS、Caltrans、天气、空气质量与野火信息。</li></ul></div>
+  </div></section>
+
+  <section id="stays" class="section"><div class="shell">
+    <div class="section-head"><div><div class="eyebrow">Stay</div><h2>住宿安排</h2></div><div class="count">3 BASES</div></div>
+    <div class="stay-grid">
+      <article class="stay"><div class="dates">SEP 25 — OCT 04 · 9 NIGHTS</div><h3>Palo Alto 私人独立温馨小屋</h3><p class="muted">独立入口、独立卫生间，作为 Stanford 与湾区活动固定基地。</p><div class="status"><span class="badge">已预订 · 约 ¥6,800</span></div></article>
+      <article class="stay"><div class="dates">OCT 03 — OCT 06</div><h3>Oakdale＋Yosemite</h3><p class="muted">10/3 Oakdale中转；10/4–10/6 优先 Yosemite Valley / Yosemite West / El Portal。</p><div class="status"><span class="badge warn">酒店与订单待补</span></div></article>
+      <article class="stay"><div class="dates">OCT 06 — OCT 09 · 3 NIGHTS</div><h3>Seattle</h3><p class="muted">优先 Capitol Hill 靠轻轨、South Lake Union 或 Denny Triangle。</p><div class="status"><span class="badge warn">房源与订单待补</span></div></article>
+    </div>
+  </div></section>
+
+  <section id="todo" class="section"><div class="shell todo-box">
+    <div class="section-head"><div><div class="eyebrow">Before We Go</div><h2>旅行前准备</h2></div><div id="todoCount" class="count">0 / 0</div></div>
+    <form id="todoForm" class="todo-add"><input id="todoInput" placeholder="添加一项准备事项" autocomplete="off"><button type="submit">添加</button></form>
+    <div id="todoList" class="todo-list"></div>
+    <aside class="missing"><div class="eyebrow">Need Your Input</div><h3>待补充的旅行信息</h3><p class="muted">把这些信息陆续发给我，就能替换页面中的“待补”。</p><div class="missing-grid">
+      <div class="missing-item">① 国际往返航班号、出发城市与时间</div><div class="missing-item">② 10/6 SFO/其他机场 → SEA 航班</div>
+      <div class="missing-item">③ 9/25–9/28 租车最终订单号与门店全址</div><div class="missing-item">④ 10/3–10/6 Yosemite段租车</div>
+      <div class="missing-item">⑤ Oakdale 10/3住宿</div><div class="missing-item">⑥ Yosemite 10/4–10/6住宿</div>
+      <div class="missing-item">⑦ Seattle 10/6–10/9住宿</div><div class="missing-item">⑧ CoDa / Hackathon / AI Week报名结果</div>
+      <div class="missing-item">⑨ 西雅图已约联系人与时间</div><div class="missing-item">⑩ 紧急联系人、保险和证件信息</div>
+    </div></aside>
+  </div></section>
+</main>
+<footer class="shell"><span>US / WEST · 2026</span><a href="#">回到顶部 ↑</a></footer>
+<script>
+const days=[
+ {d:'DAY 01 · 9月25日',t:'抵达旧金山，进入硅谷节奏',r:'SFO → Palo Alto',e:[['14:00','抵达 SFO；入境、取行李、取车'],['17:00 前后','入住 Palo Alto 小屋'],['傍晚','University Avenue散步、超市采购、倒时差']]},
+ {d:'DAY 02 · 9月26日',t:'Stanford 与硅谷生活',r:'Palo Alto · Stanford',e:[['上午','Stanford Dish轻徒步'],['中午','Main Quad、Hoover Tower、Cantor Arts Center'],['下午','d.school、Shopping Center、Sand Hill Road'],['傍晚','整理SoloHer英文介绍与约人名单']]},
+ {d:'DAY 03 · 9月27日',t:'半岛海岸自驾＋AI Week',r:'Half Moon Bay / Pacifica',e:[['上午','Half Moon Bay—Pacifica海岸线'],['下午','返回Palo Alto或前往旧金山'],['晚上','AI Week开场 / founder mixer（待最终日历）']],note:'若出现高质量 Women in AI、Consumer AI 或 founder dinner，取消海岸线。'},
+ {d:'DAY 04 · 9月28日',t:'Stanford AI 学习日',r:'Stanford',e:[['上午','校园、d.school、书店或咖啡约人'],['13:30–14:50','申请旁听 CS329Z Engineering AI Agents'],['16:30–17:20','AI for Climate Solutions: GRAIL 备选'],['晚上','AI Week小型活动或自由安排']]},
+ {d:'DAY 05 · 9月29日',t:'Stanford Agent Hackathon / AI Week',r:'Stanford 或 San Francisco',e:[['09:30–19:30','Collaborative Agent Hackathon（申请制）'],['备选','旧金山AI Week卫星活动、约人或城市体验']]},
+ {d:'DAY 06 · 9月30日',t:'旧金山 AI 活动主日',r:'San Francisco / Stanford',e:[['白天','The AI Conference、Flower AI Day 或精选活动三选一'],['13:00–16:15','Stanford HAI活动备选'],['晚上','SF networking 或 BUS 308 第一节二选一']]},
+ {d:'DAY 07 · 10月1日',t:'会议收尾＋旧金山生活',r:'San Francisco → Palo Alto',e:[['白天','The AI Conference收尾或AI Week精选活动'],['下午','安排1–2场高相关coffee chat'],['晚上','返回Palo Alto；晚场很重要才临时住SF']]},
+ {d:'DAY 08 · 10月2日',t:'Empirical Methods in the Age of AI · Day 1',r:'Stanford CoDa',e:[['全天','AI-assisted research、measurement与causal inference'],['社交目标','研究者、AI产品实践者、潜在合作方各1位']]},
+ {d:'DAY 09 · 10月3日',t:'Stanford CoDa · Day 2 → Oakdale',r:'Stanford → Oakdale',e:[['08:00–09:45','退房、取Yosemite段租车并装行李'],['10:30–15:00','参加CoDa第二天'],['15:00–15:30','从Stanford出发'],['17:00–18:00','抵达Oakdale、入住、加油采购']],note:'不夜开山路，不建议当天硬赶进Yosemite。'},
+ {d:'DAY 10 · 10月4日',t:'进入 Yosemite Valley',r:'Oakdale → Yosemite',e:[['06:30','从Oakdale出发，经CA-120进园'],['09:00–09:30','抵达谷地并尽快停车'],['白天','Visitor Center、Cook’s Meadow、Sentinel Bridge'],['午后','Lower Yosemite Fall、El Capitan Meadow、Valley View'],['日落','Tunnel View / Valley View视交通选择']]},
+ {d:'DAY 11 · 10月5日',t:'Yosemite 完整游玩日',r:'Glacier Point + Valley',e:[['早上','Glacier Point、Washburn Point'],['上午','Sentinel Dome短线或轻松观景'],['下午','Tunnel View、Bridalveil Fall、谷底短步道'],['傍晚','Valley View或Sentinel Bridge看光线']],note:'若高海拔道路关闭，改走Mirror Lake与Valley Loop精华段。'},
+ {d:'DAY 12 · 10月6日',t:'Yosemite → Seattle',r:'Yosemite → SFO/其他机场 → SEA',e:[['05:30','若搭17:30 SFO航班，必须早出发'],['11:30–12:00','目标抵达机场周边、加油还车'],['晚上','抵达Seattle、入住、Lake Union短散步']]},
+ {d:'DAY 13 · 10月7日',t:'Seattle 核心科技生态',r:'Downtown · SLU · Capitol Hill',e:[['08:30','Pike Place Market与Waterfront'],['11:30–13:00','优先约Amazon朋友午餐'],['14:00','AI2 / Madrona / Consumer AI联系人'],['16:00','Pioneer Square Labs或女性创业社区'],['傍晚','Kerry Park与Capitol Hill晚餐']]},
+ {d:'DAY 14 · 10月8日',t:'Redmond / Bellevue 科技公司日',r:'Microsoft · Eastside',e:[['上午','Microsoft Redmond（需预约）'],['中午','Redmond或Bellevue午餐'],['下午','Google Kirkland / Meta Bellevue / 创业团队三选一'],['备选','Lake Washington或Bellevue Downtown Park']]},
+ {d:'DAY 15 · 10月9日',t:'UW / Coffee Chat 与返程',r:'Seattle → SEA',e:[['上午','UW CoMotion / Allen School或当地创始人咖啡'],['中午前','返回住宿取行李'],['之后','前往SEA；国际段按要求提前值机']]}
+];
+const timeline=document.querySelector('#timeline');
+days.forEach((x,i)=>{const el=document.createElement('article');el.className='day'+(i===0?' open':'');el.innerHTML=`<button class="day-head" aria-expanded="${i===0}"><div><div class="day-kicker">${x.d}</div><div class="day-title">${x.t}</div><div class="muted">${x.r}</div></div><span class="plus">+</span></button><div class="day-body">${x.e.map(v=>`<div class="event"><div class="event-time">${v[0]}</div><span class="event-dot"></span><div>${v[1]}<br><a class="place" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v[1])}">📍 Google Maps</a></div></div>`).join('')}${x.note?`<div class="note"><strong>行程提醒</strong>${x.note}</div>`:''}</div>`;timeline.appendChild(el)});
+document.addEventListener('click',e=>{const h=e.target.closest('.day-head');if(h){const d=h.parentElement;d.classList.toggle('open');h.setAttribute('aria-expanded',d.classList.contains('open'))}const tab=e.target.closest('.tab');if(tab){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tab-pane').forEach(x=>x.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.tab).classList.add('active')}});
+function updateCountdown(){const target=new Date('2026-09-25T14:00:00-07:00'),now=new Date(),ms=target-now;if(ms<=0){document.querySelector('#countdown').textContent='旅程已开始';return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4),s=Math.floor(ms%6e4/1000);document.querySelector('#countdown').textContent=`${d}天 ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`};updateCountdown();setInterval(updateCountdown,1000);
+const defaults=['确认国际往返航班与托运行李','锁定10/6前往Seattle的航班','预订Oakdale与Yosemite住宿','预订10/3–10/6 Yosemite段租车','完成CoDa和Agent Hackathon报名','发出Seattle第一轮coffee chat邀约','准备SoloHer英文30秒介绍和3分钟Demo','购买覆盖美国医疗的境外旅行险'];
+let todos=JSON.parse(localStorage.getItem('usTripTodos')||'null')||defaults.map((t,i)=>({id:Date.now()+i,t,done:false}));
+function renderTodos(){const list=document.querySelector('#todoList');list.innerHTML='';todos.forEach(x=>{const row=document.createElement('label');row.className='todo'+(x.done?' done':'');row.innerHTML=`<input type="checkbox" ${x.done?'checked':''} data-id="${x.id}"><span>${x.t}</span><button class="delete" type="button" data-del="${x.id}">删除</button>`;list.appendChild(row)});document.querySelector('#todoCount').textContent=`${todos.filter(x=>x.done).length} / ${todos.length}`;localStorage.setItem('usTripTodos',JSON.stringify(todos))}renderTodos();
+document.querySelector('#todoList').addEventListener('change',e=>{if(e.target.matches('input')){const x=todos.find(v=>v.id==e.target.dataset.id);x.done=e.target.checked;renderTodos()}});document.querySelector('#todoList').addEventListener('click',e=>{if(e.target.dataset.del){todos=todos.filter(v=>v.id!=e.target.dataset.del);renderTodos()}});document.querySelector('#todoForm').addEventListener('submit',e=>{e.preventDefault();const input=document.querySelector('#todoInput');if(input.value.trim()){todos.push({id:Date.now(),t:input.value.trim(),done:false});input.value='';renderTodos()}});
+</script>
+</body>
+</html>
