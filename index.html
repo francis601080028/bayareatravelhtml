@@ -18,9 +18,19 @@ main{min-height:0}.panel{display:none;height:100%;overflow-y:auto;overscroll-beh
 .todo-wrap{max-width:760px}.add{display:grid;grid-template-columns:1fr 90px;gap:10px}.add input{border:1px solid var(--line);background:white;border-radius:15px;padding:15px}.add button{border:0;border-radius:15px;background:var(--navy);color:white;font-weight:800}.todo{display:grid;grid-template-columns:26px 1fr auto;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}.todo input{appearance:none;width:24px;height:24px;border:1px solid #789592;border-radius:7px}.todo input:checked{background:var(--teal)}.todo input:checked:after{content:"✓";display:grid;place-items:center;color:white}.todo.done span{text-decoration:line-through;color:#96a09e}.delete{border:0;background:none;color:#a97461}.missing{margin-top:24px;padding:20px;background:#e9f3f1;border-radius:20px}.missing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 20px}.missing-grid div{padding:9px 0;border-bottom:1px dashed #bdd0cc;font-size:13px}
 @media(max-width:700px){.app{max-width:430px;aspect-ratio:9/16;max-height:100svh;box-shadow:0 0 40px rgba(0,0,0,.08)}.titlebar{height:52px;padding:0 16px}.trip-date{font-size:10px}.tabs{padding:0 7px}.tab{padding:10px 11px 9px;font-size:13px}.panel{padding:18px 16px 26px}.panel-inner{min-height:100%}h1{font-size:54px}h2{font-size:37px;margin-bottom:17px}.hero{display:block;padding-top:5vh}.hero-note{margin-top:24px}.stats{margin-top:20px}.stat{padding:13px}.stat b{font-size:21px}.journeys{grid-template-columns:1fr;gap:8px}.journey{min-height:auto;padding:13px 15px;border-radius:18px}.journey-title{font-size:16px;margin:7px 0 3px}.leg{padding:7px 0;grid-template-columns:42px 1fr auto}.leg-route b{font-size:14px}.journey-foot{padding-top:8px}.journey-foot strong{font-size:14px}.map-card{grid-template-columns:1fr;padding:9px}.map{min-height:410px}.map svg{min-height:410px}.transport-grid{grid-template-columns:1fr 1fr}.transport-grid div:first-child{grid-column:1/-1}.stop-list{display:grid;grid-template-columns:1fr 1fr}.stop{padding:9px}.stop small{font-size:11px}.grid2,.hotel-grid{grid-template-columns:1fr}.hotel{min-height:215px}.event{grid-template-columns:65px 14px 1fr}.missing-grid{grid-template-columns:1fr}.section-intro{display:flex;justify-content:space-between;align-items:end}.section-intro h2{margin-bottom:15px}}
 @media(min-width:701px){.panel{padding-top:46px}}
+.sync-bar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:11px 13px;background:#eef5f3;border:1px solid #d5e4e0;border-radius:15px;margin-bottom:13px;font-size:12px}.sync-dot{width:9px;height:9px;border-radius:50%;background:#b6c2c0;flex:none}.sync-dot.on{background:#3f9c6d}.sync-dot.err{background:#c2603f}.sync-dot.busy{background:#d8a03d}.sync-bar button{border:1px solid #bcd2d2;background:#fff;color:#176475;border-radius:99px;padding:6px 11px;font-size:11px;font-weight:750;cursor:pointer}.sync-bar .grow{margin-left:auto;display:flex;gap:6px}
+.radar-hero{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin-bottom:6px}.cd{background:var(--navy);color:#fff;border-radius:20px;padding:17px}.cd b{display:block;font:850 26px ui-monospace,monospace;letter-spacing:-.03em}.cd span{color:#bcd6da;font-size:12px}.cd small{display:block;color:#8fb3ba;font-size:11px;margin-top:5px}
+.dl{display:flex;gap:11px;align-items:flex-start;padding:13px;border-radius:15px;border:1px solid var(--line);background:var(--card);margin-bottom:8px}.dl .when{font:750 11px ui-monospace,monospace;min-width:74px;color:var(--teal);flex:none}.dl.soon{border-color:#e5c98d;background:#fdf7ea}.dl.soon .when{color:#a3803d}.dl.urgent{border-color:#e2a58b;background:var(--orange)}.dl.urgent .when{color:#a3512f}.dl.past{opacity:.45}.dl b{display:block;font-size:14px}.dl small{color:var(--muted);display:block;margin-top:3px;line-height:1.5}
+.cf{border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:10px;background:var(--card)}.cf.high{border-left:4px solid #c2603f}.cf.mid{border-left:4px solid #d8a03d}.cf.low{border-left:4px solid #7fa8b5}.cf-head{display:flex;gap:9px;align-items:center;margin-bottom:7px}.cf-sev{font:750 10px ui-monospace,monospace;padding:3px 8px;border-radius:99px;background:var(--orange);color:#a3512f;letter-spacing:.06em;flex:none}.cf.mid .cf-sev{background:#fdf3e0;color:#a3803d}.cf.low .cf-sev{background:#e4f3f5;color:#216f80}.cf h4{margin:0;font-size:15px;flex:1;line-height:1.35}.cf p{margin:0 0 9px;font-size:13px;color:var(--muted);line-height:1.6}
+.fix{background:#f2effb;border:1px solid #ddd4f2;border-radius:12px;padding:11px;font-size:12px}.fix b{display:block;color:#5a46a6;margin-bottom:5px;font-size:10px;letter-spacing:.09em}.fix ol{margin:0;padding-left:16px}.fix li{margin:5px 0;line-height:1.55}
+.cf-act{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}.cf-act button{border:1px solid #bcd2d2;background:#fff;color:#176475;border-radius:99px;padding:6px 12px;font-size:11px;font-weight:750;cursor:pointer}.cf.resolved{opacity:.5}.cf.resolved .cf-act button.mark{background:var(--green);border-color:#a9c9b0;color:#3f7050}
+.ok-empty{padding:22px;text-align:center;color:#56705b;background:var(--green);border-radius:17px;font-size:13px}
+.modal{position:fixed;inset:0;background:rgba(13,45,57,.55);display:none;place-items:center;z-index:99;padding:20px}.modal.open{display:grid}.modal-box{background:#fff;border-radius:22px;padding:22px;max-width:430px;width:100%;max-height:82vh;overflow:auto}.modal-box h3{margin:0 0 6px}.modal-box label{display:block;font-size:12px;color:var(--muted);margin:12px 0 5px}.modal-box input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px}.modal-box textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;font:11px ui-monospace,monospace;min-height:110px}.modal-act{display:flex;gap:8px;margin-top:16px}.modal-act button{flex:1;border:0;border-radius:13px;padding:13px;font-weight:800;cursor:pointer}.modal-act .go{background:var(--navy);color:#fff}.modal-act .no{background:#eef2f1;color:var(--ink)}
+.hint{font-size:11px;color:var(--muted);line-height:1.6;margin-top:10px}.radar-h3{margin:24px 0 11px;font-size:17px}
+@media(max-width:700px){.radar-hero{grid-template-columns:1fr;gap:8px}.cd{padding:14px}.cd b{font-size:22px}}
 </style></head>
 <body><div class="app">
-<header><div class="titlebar"><div class="brand">US / WEST <span>· 2026</span></div><div class="trip-date">SEP 25 — OCT 10</div></div><nav class="tabs" aria-label="旅行页面"><button class="tab active" data-panel="overview">总览</button><button class="tab" data-panel="flights">航班</button><button class="tab" data-panel="route">路线</button><button class="tab" data-panel="days">行程</button><button class="tab" data-panel="drive">自驾</button><button class="tab" data-panel="hotels">住宿</button><button class="tab" data-panel="todo">Todo</button></nav></header>
+<header><div class="titlebar"><div class="brand">US / WEST <span>· 2026</span></div><div class="trip-date">SEP 25 — OCT 10</div></div><nav class="tabs" aria-label="旅行页面"><button class="tab active" data-panel="overview">总览</button><button class="tab" data-panel="flights">航班</button><button class="tab" data-panel="route">路线</button><button class="tab" data-panel="days">行程</button><button class="tab" data-panel="drive">自驾</button><button class="tab" data-panel="hotels">住宿</button><button class="tab" data-panel="radar">雷达<span id="tabDot" style="display:none;margin-left:4px;color:#c2603f">●</span></button><button class="tab" data-panel="todo">Todo</button></nav></header>
 <main>
 <section id="overview" class="panel active"><div class="panel-inner hero"><div><div class="eyebrow">Silicon Valley — Yosemite — Seattle</div><h1>美国<br>西海岸</h1><div class="date">9月25日 — 10月10日 · 16天</div><div class="stats"><div class="stat"><b>5</b><span class="muted">航段</span></div><div class="stat"><b>3</b><span class="muted">住宿区域</span></div><div class="stat"><b>2</b><span class="muted">自驾阶段</span></div></div></div><div><div class="hero-note"><b>旅行主题</b><br>AI 产品与创业连接、Stanford 学习、湾区生活体验、Yosemite 自然与西雅图科技生态。</div><div class="privacy">公开版已自动省略酒店 PIN、订单号及其他敏感信息。</div></div></div></section>
 <section id="flights" class="panel"><div class="panel-inner"><div class="section-intro"><div><div class="eyebrow">Boarding</div><h2>航班行程</h2></div><span class="badge">3组行程 · 5段航班</span></div><div id="flightCards" class="journeys"></div><p class="muted" style="font-size:11px;margin-top:8px">注：北京→首尔段截图未显示承运航空公司与航班号，暂不猜测；其余航班已按订单更新。</p></div></section>
@@ -55,8 +65,22 @@ main{min-height:0}.panel{display:none;height:100%;overflow-y:auto;overscroll-beh
 <section id="days" class="panel"><div class="panel-inner"><div class="section-intro"><div><div class="eyebrow">Day by Day</div><h2>每日行程</h2></div><span class="badge blue">16 DAYS</span></div><div id="dayList" class="day-list"></div><p class="muted" style="font-size:11px;margin-top:12px">交通时间和费用为规划估算；Caltrain、Muni、Link、停车费及路况可能调整，出发当天以运营方和地图实时结果为准。</p></div></section>
 <section id="drive" class="panel"><div class="panel-inner"><div class="section-intro"><div><div class="eyebrow">On the Road</div><h2>自驾信息</h2></div><span class="badge warn">1单待确认</span></div><div class="grid2"><article class="dark"><span class="badge">截图显示已确认</span><h3 style="margin-top:15px">SFO 机场往返租车</h3><p>丰田或同组 · 车型细节待补</p><div class="spec"><label>PICK UP</label><div><b>9月25日 15:00</b><br>San Francisco Airport</div><label>RETURN</label><div><b>9月27日 15:00</b><br>San Francisco Airport</div></div><div class="price"><span>境外租车</span><strong>¥631</strong></div></article><article class="dark"><span class="badge warn">需补最终订单</span><h3 style="margin-top:15px">Yosemite 段租车</h3><p>10月3日至10月6日</p><div class="spec"><label>PICK UP</label><div><b>10月3日</b><br>Palo Alto / Mountain View优先</div><label>RETURN</label><div><b>10月6日</b><br>SFO 或最终出发机场</div></div><div class="price"><span>车型 / 保险 / 价格</span><strong>待补</strong></div></article></div><div class="conflict"><b>需要你确认</b>此前讨论的是9月28日 Mountain View还车约¥1,100，但新截图显示已确认订单为9月27日15:00 SFO还车、¥631。网页暂按截图记录。</div><div class="subtabs"><button class="subtab active" data-sub="check">取还车检查</button><button class="subtab" data-sub="insurance">保险</button><button class="subtab" data-sub="rules">驾驶提醒</button></div><div id="check" class="pane active"><ul class="bullets"><li>取车时拍摄车身、玻璃、轮胎、里程、油量和仪表盘。</li><li>确认倒车影像、后备箱遮物帘、充电接口。</li></ul></div><div id="insurance" class="pane"><ul class="bullets"><li>车行碰撞、盗抢0起赔额，并确认第三者责任具体保额。</li><li>平台优享险补充玻璃、轮胎、底盘和道路救援时，保存理赔凭证。</li></ul></div><div id="rules" class="pane"><ul class="bullets"><li>旧金山车内不留任何可见物。</li><li>Yosemite出发前复查天气、野火和道路管制。</li></ul></div></div></section>
 <section id="hotels" class="panel"><div class="panel-inner"><div class="section-intro"><div><div class="eyebrow">Stay</div><h2>住宿安排</h2></div><span class="badge warn">存在重叠订单</span></div><div class="hotel-grid"><article class="hotel"><div class="dates">SEP 25 — OCT 03/04</div><h3>Palo Alto 私人小屋</h3><dl><dt>状态</dt><dd>已预订</dd><dt>价格</dt><dd>约 ¥6,800</dd><dt>特点</dt><dd>独立入口、独立卫生间</dd></dl><div class="bottom"><span class="badge">湾区固定基地</span></div></article><article class="hotel"><div class="dates">OCT 03 — OCT 04 · 1 NIGHT</div><h3>Mariposa Lodge</h3><dl><dt>地址</dt><dd>5052 California 140 Unit 7, Mariposa</dd><dt>房型</dt><dd>Queen Room</dd><dt>人数</dt><dd>订单显示3位成人</dd><dt>总价</dt><dd><b>US$168.93</b> 含税费</dd><dt>评分</dt><dd>8.3 / 10</dd></dl><div class="bottom"><span class="badge warn">与下一单重叠</span></div></article><article class="hotel primary"><div class="dates">OCT 03 — OCT 06 · 3 NIGHTS</div><h3>Yosemite View Lodge</h3><dl><dt>地址</dt><dd>11136 CA-140, El Portal, CA 95318</dd><dt>房型</dt><dd>Deluxe River View · 2 Queen Beds</dd><dt>入住</dt><dd>15:00后</dd><dt>退房</dt><dd>11:00前</dd><dt>取消</dt><dd>9月26日15:00前免费取消</dd></dl><div class="bottom"><span class="badge">Confirmed</span></div></article><article class="hotel"><div class="dates">OCT 06 — OCT 08</div><h3>Seattle 住宿</h3><p class="muted">住宿名称、地址和价格待补。根据返程机票，Seattle实际住宿应为2晚。</p><div class="bottom"><span class="badge warn">待补订单</span></div></article></div><div class="conflict"><b>住宿冲突提醒</b>Mariposa Lodge（10/3–10/4）与 Yosemite View Lodge（10/3–10/6）首晚重叠。请确认前者是备用单还是计划取消。公开网页未展示预订编号与PIN。</div></div></section>
-<section id="todo" class="panel"><div class="panel-inner todo-wrap"><div class="section-intro"><div><div class="eyebrow">Before We Go</div><h2>旅行前准备</h2></div><span id="todoCount" class="badge blue">0 / 0</span></div><form id="todoForm" class="add"><input id="todoInput" placeholder="添加准备事项"><button>添加</button></form><div id="todoList"></div><aside class="missing"><h3>仍待补充</h3><div class="missing-grid"><div>国际第一段航班号</div><div>9/25–9/27租车车型与保险</div><div>最终是否改为9/28 Mountain View还车</div><div>Yosemite段租车订单</div><div>Seattle住宿订单</div><div>Mariposa Lodge是否取消</div><div>Agent Hackathon时间/地点/报名</div><div>CS329Z旁听许可</div><div>Seattle会面安排</div></div></aside></div></section>
+<section id="radar" class="panel"><div class="panel-inner"><div class="section-intro"><div><div class="eyebrow">Radar</div><h2>提醒与冲突</h2></div><span id="radarBadge" class="badge blue">检测中</span></div>
+<div id="radarHero" class="radar-hero"></div>
+<h3 class="radar-h3">⏰ 截止与提醒</h3>
+<div id="dlList"></div>
+<div class="map-actions"><a href="#" id="icsAll">📅 全部导入手机日历（.ics）</a><a href="#" id="btnNotify">🔔 开启浏览器提醒</a></div>
+<p class="hint">日历项自带提前提醒：截止类提前 3 天和 1 天，航班提前 3 小时。导入一次之后，即使不打开本页，手机也会主动响。</p>
+<h3 class="radar-h3">⚠️ 自动冲突检测</h3>
+<div id="cfList"></div>
+<p class="hint">规则跑在页面内的航班、住宿、租车时间数据上，数据一改结论就跟着变。点「已处理」后条目折叠，该状态会跨设备同步。</p>
+</div></section>
+<section id="todo" class="panel"><div class="panel-inner todo-wrap"><div class="section-intro"><div><div class="eyebrow">Before We Go</div><h2>旅行前准备</h2></div><span id="todoCount" class="badge blue">0 / 0</span></div>
+<div class="sync-bar"><i id="syncDot" class="sync-dot"></i><span id="syncText">仅本机保存</span><span class="grow"><button type="button" id="btnSyncCfg">跨设备同步</button><button type="button" id="btnCode">同步码</button></span></div>
+<form id="todoForm" class="add"><input id="todoInput" placeholder="添加准备事项"><button>添加</button></form><div id="todoList"></div><aside class="missing"><h3>仍待补充</h3><div class="missing-grid"><div>国际第一段航班号</div><div>9/25–9/27租车车型与保险</div><div>最终是否改为9/28 Mountain View还车</div><div>Yosemite段租车订单</div><div>Seattle住宿订单</div><div>Mariposa Lodge是否取消</div><div>Agent Hackathon时间/地点/报名</div><div>CS329Z旁听许可</div><div>Seattle会面安排</div></div></aside></div></section>
 </main></div>
+<div class="modal" id="mCfg"><div class="modal-box"><h3>跨设备同步</h3><p class="hint" style="margin-top:0">填入你自己的 Supabase 项目后，手机和电脑会自动同步 Todo 与冲突处理状态。留空则只在本机保存。</p><label>Project URL</label><input id="cfgUrl" placeholder="https://xxxx.supabase.co" autocomplete="off"><label>anon public key</label><input id="cfgKey" placeholder="eyJhbGciOi..." autocomplete="off"><label>同步房间号（自己起，两台设备填一样）</label><input id="cfgRoom" placeholder="例如 francis-us-2026-8f3a" autocomplete="off"><p class="hint">anon key 会写进这台设备的浏览器存储，不会提交到仓库。房间号相当于口令，别人猜不到就读不到你的数据——请起长一点。</p><div class="modal-act"><button class="no" data-close>取消</button><button class="go" id="cfgSave">保存并测试</button></div><div id="cfgMsg" class="hint"></div></div></div>
+<div class="modal" id="mCode"><div class="modal-box"><h3>同步码</h3><p class="hint" style="margin-top:0">不想配后端时用这个：在 A 设备点「生成」，把这段码发到另一台设备，粘贴后点「导入」。</p><textarea id="codeBox" placeholder="把同步码粘贴到这里"></textarea><div class="modal-act"><button class="no" id="codeGen">生成</button><button class="go" id="codeImp">导入</button></div><div id="codeMsg" class="hint"></div><div class="modal-act"><button class="no" data-close>关闭</button></div></div></div>
 <script>
 const journeys=[
  {n:'01 / 03',date:'9月25日',title:'北京 → 首尔 → 旧金山',price:'¥4,003',legs:[['11:20','PEK → ICN','航空公司/航班号：原截图未显示','14:20'],['19:15','ICN → SFO','普莱米娅航空 · YP111','14:15 同日抵达']]},
@@ -87,5 +111,239 @@ function showPanel(id){document.querySelectorAll('.panel').forEach(x=>x.classLis
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPanel(b.dataset.panel));if(location.hash&&document.querySelector(location.hash))showPanel(location.hash.slice(1));
 document.addEventListener('click',e=>{const h=e.target.closest('.day-head');if(h)h.parentElement.classList.toggle('open');const s=e.target.closest('.subtab');if(s){document.querySelectorAll('.subtab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.pane').forEach(x=>x.classList.remove('active'));s.classList.add('active');document.getElementById(s.dataset.sub).classList.add('active')}});
 function countdown(){const el=document.querySelector('#countdown');if(!el)return;const ms=new Date('2026-09-25T14:15:00-07:00')-new Date();if(ms<=0){el.textContent='已抵达旧金山';return}const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);el.textContent=`距离SFO抵达 ${d}天 ${h}时 ${m}分`}countdown();setInterval(countdown,60000);
-const defaultTodos=['确认9/27 SFO还车还是改订9/28 Mountain View还车','确认并处理10/3重叠住宿订单','预订Yosemite段租车','补充Seattle住宿','确认东京长转机行李是否直挂','完成CoDa与Agent Hackathon报名','发出Seattle coffee chat邀约','准备SoloHer英文介绍与Demo'];let todos=JSON.parse(localStorage.getItem('usTripTodosV2')||'null')||defaultTodos.map((t,i)=>({id:Date.now()+i,t,done:false}));function render(){const box=document.querySelector('#todoList');box.innerHTML=todos.map(x=>`<label class="todo${x.done?' done':''}"><input type="checkbox" data-id="${x.id}" ${x.done?'checked':''}><span>${x.t}</span><button type="button" class="delete" data-del="${x.id}">删除</button></label>`).join('');document.querySelector('#todoCount').textContent=`${todos.filter(x=>x.done).length} / ${todos.length}`;localStorage.setItem('usTripTodosV2',JSON.stringify(todos))}render();document.querySelector('#todoList').onchange=e=>{const x=todos.find(v=>v.id==e.target.dataset.id);if(x){x.done=e.target.checked;render()}};document.querySelector('#todoList').onclick=e=>{if(e.target.dataset.del){todos=todos.filter(x=>x.id!=e.target.dataset.del);render()}};document.querySelector('#todoForm').onsubmit=e=>{e.preventDefault();const input=document.querySelector('#todoInput');if(input.value.trim()){todos.push({id:Date.now(),t:input.value.trim(),done:false});input.value='';render()}};
+
+/* ================= 结构化行程数据（冲突检测的唯一事实来源） ================= */
+const TRIP={
+ flights:[
+  {id:'f1',no:null,airline:null,from:'PEK',to:'ICN',dep:'2026-09-25T11:20:00+08:00',arr:'2026-09-25T14:20:00+09:00',ok:false,label:'北京 → 首尔'},
+  {id:'f2',no:'YP111',airline:'普莱米娅航空',from:'ICN',to:'SFO',dep:'2026-09-25T19:15:00+09:00',arr:'2026-09-25T14:15:00-07:00',ok:true,intl:true,label:'首尔 → 旧金山'},
+  {id:'f3',no:'AS591',airline:'阿拉斯加航空',from:'SFO',to:'SEA',dep:'2026-10-06T19:11:00-07:00',arr:'2026-10-06T21:25:00-07:00',ok:true,label:'旧金山 → 西雅图'},
+  {id:'f4',no:'NH117',airline:'全日空',from:'SEA',to:'HND',dep:'2026-10-08T16:30:00-07:00',arr:'2026-10-09T19:00:00+09:00',ok:true,intl:true,redeye:'2026-10-08',label:'西雅图 → 东京'},
+  {id:'f5',no:'NH963',airline:'全日空',from:'HND',to:'PEK',dep:'2026-10-10T17:15:00+09:00',arr:'2026-10-10T20:15:00+08:00',ok:true,intl:true,label:'东京 → 北京'}
+ ],
+ stays:[
+  {id:'s1',name:'Palo Alto 私人小屋',in:'2026-09-25',out:'2026-10-03',ok:true},
+  {id:'s2',name:'Mariposa Lodge',in:'2026-10-03',out:'2026-10-04',ok:true},
+  {id:'s3',name:'Yosemite View Lodge',in:'2026-10-03',out:'2026-10-06',ok:true,cancelBy:'2026-09-26T15:00:00-07:00'},
+  {id:'s4',name:'Seattle 住宿',in:'2026-10-06',out:'2026-10-08',ok:false},
+  {id:'s5',name:'东京转机住宿',in:'2026-10-09',out:'2026-10-10',ok:false}
+ ],
+ rentals:[
+  {id:'r1',name:'SFO 往返租车',pick:'2026-09-25T15:00:00-07:00',drop:'2026-09-27T15:00:00-07:00',at:'SFO',to:'SFO',ok:true},
+  {id:'r2',name:'Yosemite 段租车',pick:'2026-10-03T12:00:00-07:00',drop:'2026-10-06T16:00:00-07:00',at:'Palo Alto / Mountain View',to:'SFO',ok:false,assumed:true}
+ ],
+ tripNights:['2026-09-25','2026-10-10']
+};
+
+/* ================= 时间工具 ================= */
+const D=x=>new Date(x), NOW=()=>new Date();
+const pad=n=>String(n).padStart(2,'0');
+function dRange(s,e){const o=[];let d=D(s+'T12:00:00Z'),z=D(e+'T12:00:00Z');while(d<z){o.push(d.toISOString().slice(0,10));d=D(+d+864e5)}return o}
+// 纯日期串按 UTC 正午解析、统一用 UTC 取值，避免在负时区（美国当地）整体退一天
+function fmtCN(x){const d=(typeof x==='string'&&x.length===10)?D(x+'T12:00:00Z'):D(x);return `${d.getUTCMonth()+1}月${d.getUTCDate()}日`}
+function fmtPT(x){return D(x).toLocaleString('zh-CN',{timeZone:'America/Los_Angeles',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false})}
+// 每个提醒按它实际发生地的时区显示，别让北京起飞的航班写成太平洋时间
+const APT={PEK:'Asia/Shanghai',ICN:'Asia/Seoul',HND:'Asia/Tokyo',SFO:'America/Los_Angeles',SEA:'America/Los_Angeles'};
+const TZN={'Asia/Shanghai':'北京时间','Asia/Seoul':'首尔时间','Asia/Tokyo':'东京时间','America/Los_Angeles':'太平洋时间'};
+function fmtTZ(x,tz){tz=tz||'America/Los_Angeles';return D(x).toLocaleString('zh-CN',{timeZone:tz,month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false})+' '+TZN[tz]}
+function hrs(a,b){return (D(b)-D(a))/36e5}
+function leftText(ms){if(ms<0)return'已过期';const d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);return d>0?`${d}天${h}时`:`${h}小时${Math.floor(ms%36e5/6e4)}分`}
+
+/* ================= 状态与同步层 ================= */
+const LS='usTripStateV3', LSCFG='usTripSyncCfg';
+const DEFAULT_TODOS=['确认9/27 SFO还车还是改订9/28 Mountain View还车','确认并处理10/3重叠住宿订单','预订Yosemite段租车','补充Seattle住宿','确认东京长转机行李是否直挂','完成CoDa与Agent Hackathon报名','发出Seattle coffee chat邀约','准备SoloHer英文介绍与Demo'];
+let STATE=load();
+function load(){
+ let s=null;try{s=JSON.parse(localStorage.getItem(LS)||'null')}catch(e){}
+ if(!s){ let old=null;try{old=JSON.parse(localStorage.getItem('usTripTodosV2')||'null')}catch(e){}
+  s={todos:old||DEFAULT_TODOS.map((t,i)=>({id:1e12+i,t,done:false})),decisions:{},updatedAt:Date.now()} }
+ s.todos=s.todos||[];s.decisions=s.decisions||{};return s;
+}
+function save(push=true){STATE.updatedAt=Date.now();localStorage.setItem(LS,JSON.stringify(STATE));if(push)SYNC.push()}
+let CFG=(()=>{try{return JSON.parse(localStorage.getItem(LSCFG)||'null')||{}}catch(e){return{}}})();
+const SYNC={
+ timer:null,
+ on(){return !!(CFG.url&&CFG.key&&CFG.room)},
+ head(){return{apikey:CFG.key,Authorization:'Bearer '+CFG.key,'Content-Type':'application/json'}},
+ setStatus(cls,txt){const d=document.querySelector('#syncDot'),t=document.querySelector('#syncText');if(d)d.className='sync-dot '+cls;if(t)t.textContent=txt},
+ async pull(){
+  if(!this.on())return this.setStatus('','仅本机保存');
+  this.setStatus('busy','同步中…');
+  try{
+   const r=await fetch(`${CFG.url}/rest/v1/trip_state?id=eq.${encodeURIComponent(CFG.room)}&select=data,updated_at`,{headers:this.head()});
+   if(!r.ok)throw new Error('HTTP '+r.status);
+   const j=await r.json();
+   if(j.length&&j[0].updated_at>(STATE.updatedAt||0)){STATE=j[0].data;localStorage.setItem(LS,JSON.stringify(STATE));renderTodos(false);renderRadar()}
+   else if(!j.length){await this.push(true)}
+   this.setStatus('on','已同步 · '+new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'}));
+  }catch(e){this.setStatus('err','同步失败：'+e.message)}
+ },
+ push(now=false){
+  if(!this.on())return;clearTimeout(this.timer);
+  const go=async()=>{
+   this.setStatus('busy','同步中…');
+   try{
+    const r=await fetch(`${CFG.url}/rest/v1/trip_state`,{method:'POST',headers:{...this.head(),Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify([{id:CFG.room,data:STATE,updated_at:STATE.updatedAt}])});
+    if(!r.ok)throw new Error('HTTP '+r.status+' '+(await r.text()).slice(0,80));
+    this.setStatus('on','已同步 · '+new Date().toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'}));
+   }catch(e){this.setStatus('err','同步失败：'+e.message)}
+  };
+  return now?go():void(this.timer=setTimeout(go,900));
+ }
+};
+
+/* ================= 截止与提醒 ================= */
+function deadlines(){
+ const o=[];
+ TRIP.stays.forEach(s=>{if(s.cancelBy)o.push({id:'c-'+s.id,at:D(s.cancelBy),tz:'America/Los_Angeles',t:s.name+' 免费取消截止',d:'过了这个点取消就要付费。Mariposa Lodge 与本单的取舍必须在此之前定完。'})});
+ const dep=D(TRIP.flights[0].dep);
+ o.push({id:'soft',at:D(+dep-7*864e5),tz:'Asia/Shanghai',t:'待确认事项收口日',d:'Seattle 住宿、Yosemite 段租车、首尔航段航班号、东京转机住宿——建议这天前全部落定，再晚价格和可选项都会变差。'});
+ o.push({id:'dep',at:dep,tz:'Asia/Shanghai',t:'出发：北京首都机场',d:'11:20 起飞。国际航班建议提前 3 小时到机场。'});
+ TRIP.flights.forEach(f=>{if(f.no)o.push({id:'ci-'+f.id,at:D(+D(f.dep)-864e5),tz:APT[f.from],t:`值机开放：${f.airline} ${f.no}`,d:`${f.label}，${f.from} 起飞前 24 小时可选座值机。`})});
+ TRIP.stays.filter(s=>s.ok).forEach(s=>o.push({id:'in-'+s.id,at:D(s.in+'T15:00:00-07:00'),tz:'America/Los_Angeles',t:'入住 '+s.name,d:'办理入住。'}));
+ return o.sort((a,b)=>a.at-b.at);
+}
+
+/* ================= 冲突检测引擎 ================= */
+function detect(){
+ const C=[],now=NOW();
+ // R1 住宿重叠
+ const ok=TRIP.stays.filter(s=>s.ok);
+ for(let i=0;i<ok.length;i++)for(let j=i+1;j<ok.length;j++){
+  const a=ok[i],b=ok[j],s=Math.max(D(a.in),D(b.in)),e=Math.min(D(a.out),D(b.out));
+  if(s<e)C.push({id:'ov-'+a.id+'-'+b.id,sev:'high',t:`住宿重叠：${a.name} × ${b.name}`,
+   p:`${fmtCN(s)} 起共 ${Math.round((e-s)/864e5)} 晚被两笔订单同时覆盖，等于同一晚付两次钱。`,
+   fix:['取消 Mariposa Lodge（US$168.93），保留 Yosemite View Lodge 全程 3 晚。它在 El Portal 谷口，10/4 和 10/5 每天能省约 50 分钟往返车程。','若 Mariposa 已过免费取消期不可退，就把它当 10/3 抵达当晚的落脚点，10/4 再入住 Yosemite View Lodge——但 Yosemite 首晚房费仍然浪费。','无论选哪个，都要在 Yosemite View Lodge 的 9/26 15:00 免费取消截止前决定。']});
+ }
+ // R2 住宿缺口
+ const cover=new Set();TRIP.stays.filter(s=>s.ok).forEach(s=>dRange(s.in,s.out).forEach(n=>cover.add(n)));
+ const plane=new Set(TRIP.flights.filter(f=>f.redeye).map(f=>f.redeye));
+ const gaps=dRange(TRIP.tripNights[0],TRIP.tripNights[1]).filter(n=>!cover.has(n)&&!plane.has(n));
+ if(gaps.length){
+  const byStay=TRIP.stays.filter(s=>!s.ok);
+  C.push({id:'gap',sev:'high',t:`${gaps.length} 个夜晚还没有确认住宿`,
+   p:`${gaps.map(fmtCN).join('、')} 目前没有任何已确认订单覆盖。对应 ${byStay.map(s=>s.name).join(' 和 ')}。`,
+   fix:['Seattle 两晚（10/6、10/7）优先订 Downtown 或 South Lake Union，靠近 Amazon Spheres 和 AI2，且 Link 轻轨直达机场，10/8 去 SEA 只要 35–50 分钟。','东京 10/9 那晚：22 小时 15 分转机必须出关过夜。羽田国际线航站楼内有 Royal Park Hotel（不入境也能住），若入境则品川一带更便宜、京急直达 15–25 分钟。','订东京住宿前先确认能否免签中转或已有有效签证，这决定你能不能出机场。']});
+ }
+ // R3 国际到达 → 取车缓冲
+ TRIP.rentals.filter(r=>r.ok).forEach(r=>{
+  const f=TRIP.flights.find(f=>f.intl&&f.to===r.at&&Math.abs(D(r.pick)-D(f.arr))<12*36e5);
+  if(f){const b=hrs(f.arr,r.pick);if(b<1.5)C.push({id:'buf-'+r.id,sev:'mid',t:`落地到取车只有 ${Math.round(b*60)} 分钟`,
+   p:`${f.no} ${fmtPT(f.arr)} 落地 ${r.at}，租车预订取车时间 ${fmtPT(r.pick)}。国际航班入境排队加提行李，SFO 高峰时段经常要 60–90 分钟，这个缓冲大概率不够。`,
+   fix:['多数租车行有 1–2 小时宽限，落地后先打电话或用 App 告知晚到，通常不会取消订单。','把取车时间直接改到 17:00，多数平台改时间不额外收费，且租期计费按 24 小时段算，不一定涨价。','别把当天任何有硬时间的安排排在 18:00 之前。']})}
+ });
+ // R4 长转机
+ for(let i=0;i<TRIP.flights.length-1;i++){
+  const a=TRIP.flights[i],b=TRIP.flights[i+1];if(a.to!==b.from)continue;
+  const h=hrs(a.arr,b.dep);if(h>=24)continue; // 间隔超过一天的不是转机，是落地停留
+  if(h<2)C.push({id:'mct-'+a.id,sev:'high',t:`${a.to} 转机只有 ${Math.round(h*60)} 分钟`,p:'低于常见的最低衔接时间，任何延误都会导致误机。',fix:['联系航司确认是否为同一联程票，若是则误机由航司负责改签。']});
+  else if(h>8)C.push({id:'lay-'+a.id,sev:'mid',t:`${a.to} 转机 ${Math.round(h)} 小时，需要过夜方案`,
+   p:`${a.no} ${fmtCN(a.arr)} 抵达，${b.no} 次日 ${D(b.dep).toLocaleString('zh-CN',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',hour12:false})} 才起飞，中间跨夜。`,
+   fix:['先确认行李能否从西雅图直挂北京。不能直挂就必须入境提行李，住宿只能选机场外。','能直挂且不想入境：羽田国际航站楼内的 Royal Park Hotel 可过夜，省去出入境。','要入境的话，22 小时足够进一趟市区，但要留足返回值机的时间，NH963 建议提前 2 小时到航站楼。']});
+ }
+ // R5 未订租车挡住行程
+ TRIP.rentals.filter(r=>!r.ok).forEach(r=>{
+  C.push({id:'car-'+r.id,sev:'high',t:`${r.name} 还没订，但这几天的行程全靠自驾`,
+   p:`${fmtCN(r.pick)}–${fmtCN(r.drop)} 的 Yosemite 段没有公共交通替代方案。Glacier Point、Tunnel View 这些点位不自驾到不了。`,
+   fix:['取车点选 Palo Alto 或 Mountain View 市区门店，比 SFO 便宜且省去折返机场。','10/6 要赶 19:11 的 AS591，还车必须早于 17:00。从 El Portal 开到 SFO 要 4–5 小时，当天最迟 11:00 出发。','十一长假是美国租车淡季但 Yosemite 旺季，车型选中型 SUV，山路和行李都更从容。']});
+ });
+ // R6 长途驾驶与会议时间叠加
+ C.push({id:'drive-103',sev:'mid',t:'10/3 会议结束时间未知，可能要摸黑开山路',
+  p:'CoDa Day 2 当天还要开 4–5 小时到 El Portal。Yosemite View Lodge 15:00 后可入住，但 CA-140 沿 Merced River 是无路灯的峡谷路段，10 月初日落约 18:40。',
+  fix:['先跟 CoDa 主办方确认 10/3 的实际结束时间。','若结束晚于 14:00，就把当天改成只开到 Mariposa 住一晚（正好用上那笔重叠订单），10/4 早上再进谷。','务必在出发前而不是路上加满油，El Portal 到谷内加油站少且贵。']});
+ // R7 固定课程与白天活动互斥
+ C.push({id:'cs329z',sev:'low',t:'9/30 白天 SF 活动与 CS 329Z 时间重叠',
+  p:'CS 329Z 周三场 13:30–14:50 在 Stanford Packard 101，与 The AI Conference / Flower AI Day / HAI 的白天场直接冲突，只能二选一。',
+  fix:['以课为准：SF 只排 17:00 之后的晚场和 Networking，课后 15:10 出发赶 Caltrain 来得及。','以会为准：周三场讲 RAG，与你的方向最相关，跳过可惜；周一场（9/28）讲 LLMs for Builders 可作替代。','当天走之前核对 Caltrain 末班车时间。']});
+ // R8 还车时间与当日徒步
+ const r1=TRIP.rentals[0];
+ C.push({id:'drop-927',sev:'low',t:'9/27 还车时间会压缩海岸徒步',
+  p:`${r1.name} 约定 ${fmtPT(r1.drop)} 还车。Palo Alto → Half Moon Bay → Pacifica → SFO 光开车就要 2–2.5 小时，加上徒步和还车手续，时间很紧。`,
+  fix:['当天 09:00 前出发，Half Moon Bay 只走 Coastal Trail 北段约 1 小时，Pacifica 只停 Devil’s Slide 观景台。','或者改成 9/28 在 Mountain View 还车（此前比较过的 ¥1,100 方案），周日整天不受还车牵制。','还车前在 SFO 附近加满油，机场还车点的补油价高很多。']});
+ return C;
+}
+
+/* ================= 雷达渲染 ================= */
+function renderRadar(){
+ const now=NOW(),dl=deadlines(),cf=detect();
+ const nextDl=dl.find(x=>x.at>now);
+ const openCf=cf.filter(c=>!STATE.decisions[c.id]);
+ const high=openCf.filter(c=>c.sev==='high').length;
+ document.querySelector('#radarHero').innerHTML=
+  `<div class="cd"><b id="cdDep">—</b><span>距离出发</span><small>${fmtCN(TRIP.flights[0].dep)} 11:20 北京起飞</small></div>`+
+  `<div class="cd" style="background:${nextDl&&nextDl.at-now<3*864e5?'#8c4630':'#16859b'}"><b>${nextDl?leftText(nextDl.at-now):'—'}</b><span>${nextDl?nextDl.t:'无待办截止'}</span><small>${nextDl?fmtTZ(nextDl.at,nextDl.tz):''}</small></div>`;
+ const badge=document.querySelector('#radarBadge');
+ badge.textContent=openCf.length?`${openCf.length} 项待处理`:'全部已处理';
+ badge.className='badge '+(high?'warn':'blue');
+ document.querySelector('#tabDot').style.display=high?'inline':'none';
+ document.querySelector('#dlList').innerHTML=dl.map(x=>{
+  const ms=x.at-now,cls=ms<0?'past':ms<3*864e5?'urgent':ms<7*864e5?'soon':'';
+  return `<div class="dl ${cls}"><div class="when">${ms<0?'已过':leftText(ms)}</div><div><b>${x.t}</b><small>${fmtTZ(x.at,x.tz)} · ${x.d}</small></div></div>`}).join('');
+ document.querySelector('#cfList').innerHTML=cf.length?cf.map(c=>{
+  const done=!!STATE.decisions[c.id];
+  return `<div class="cf ${c.sev}${done?' resolved':''}"><div class="cf-head"><span class="cf-sev">${c.sev==='high'?'必须处理':c.sev==='mid'?'建议处理':'留意'}</span><h4>${c.t}</h4></div><p>${c.p}</p><div class="fix"><b>调整建议</b><ol>${c.fix.map(f=>`<li>${f}</li>`).join('')}</ol></div><div class="cf-act"><button class="mark" data-cf="${c.id}">${done?'✓ 已处理':'标记已处理'}</button></div></div>`}).join(''):'<div class="ok-empty">没有检测到冲突。</div>';
+}
+function tickCd(){const el=document.querySelector('#cdDep');if(!el)return;const ms=D(TRIP.flights[0].dep)-NOW();el.textContent=ms>0?leftText(ms):'已出发'}
+
+/* ================= 日历导出（真正的主动提醒） ================= */
+function icsUTC(x){return D(x).toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'')}
+function buildICS(){
+ const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//US West Trip 2026//CN','CALSCALE:GREGORIAN','METHOD:PUBLISH'];
+ const ev=(uid,start,end,title,desc,alarms)=>{
+  L.push('BEGIN:VEVENT','UID:'+uid+'@ustrip2026','DTSTAMP:'+icsUTC(NOW()),'DTSTART:'+icsUTC(start),'DTEND:'+icsUTC(end),
+   'SUMMARY:'+title.replace(/[,;]/g,' '),'DESCRIPTION:'+desc.replace(/[,;]/g,' ').replace(/\n/g,'\\n'));
+  (alarms||[]).forEach(a=>L.push('BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+title.replace(/[,;]/g,' '),'TRIGGER:'+a,'END:VALARM'));
+  L.push('END:VEVENT');
+ };
+ TRIP.flights.forEach(f=>ev('fl-'+f.id,f.dep,f.arr,`✈ ${f.from}→${f.to} ${f.no||'航班号待定'}`,`${f.airline||'航司待定'} ${f.label}`,['-PT3H','-P1D']));
+ deadlines().filter(x=>!x.id.startsWith('in-')).forEach(x=>ev('dl-'+x.id,x.at,+D(x.at)+18e5,'⏰ '+x.t,x.d,['-P3D','-P1D']));
+ TRIP.stays.filter(s=>s.ok).forEach(s=>{
+  ev('hi-'+s.id,s.in+'T15:00:00-07:00',s.in+'T16:00:00-07:00','🏨 入住 '+s.name,'办理入住',['-PT2H']);
+  ev('ho-'+s.id,s.out+'T10:00:00-07:00',s.out+'T11:00:00-07:00','🏨 退房 '+s.name,'11:00 前退房',['-PT1H']);
+ });
+ TRIP.rentals.filter(r=>r.ok).forEach(r=>{
+  ev('rp-'+r.id,r.pick,+D(r.pick)+36e5,'🚗 取车 '+r.name,'取车点 '+r.at+'。取车时拍车身、玻璃、轮胎、里程和油量。',['-PT2H']);
+  ev('rd-'+r.id,r.drop,+D(r.drop)+36e5,'🚗 还车 '+r.name,'还车点 '+r.to+'。提前加满油。',['-PT3H','-P1D']);
+ });
+ L.push('END:VCALENDAR');return L.join('\r\n');
+}
+
+/* ================= Todo ================= */
+function renderTodos(push=true){
+ const box=document.querySelector('#todoList');
+ box.innerHTML=STATE.todos.map(x=>`<label class="todo${x.done?' done':''}"><input type="checkbox" data-id="${x.id}" ${x.done?'checked':''}><span>${x.t.replace(/</g,'&lt;')}</span><button type="button" class="delete" data-del="${x.id}">删除</button></label>`).join('');
+ document.querySelector('#todoCount').textContent=`${STATE.todos.filter(x=>x.done).length} / ${STATE.todos.length}`;
+ if(push)save();
+}
+renderTodos(false);renderRadar();tickCd();setInterval(tickCd,30000);setInterval(renderRadar,6e5);
+document.querySelector('#todoList').onchange=e=>{const x=STATE.todos.find(v=>v.id==e.target.dataset.id);if(x){x.done=e.target.checked;renderTodos()}};
+document.querySelector('#todoList').onclick=e=>{if(e.target.dataset.del){STATE.todos=STATE.todos.filter(x=>x.id!=e.target.dataset.del);renderTodos()}};
+document.querySelector('#todoForm').onsubmit=e=>{e.preventDefault();const i=document.querySelector('#todoInput');if(i.value.trim()){STATE.todos.push({id:Date.now(),t:i.value.trim(),done:false});i.value='';renderTodos()}};
+document.querySelector('#cfList').onclick=e=>{const b=e.target.closest('[data-cf]');if(!b)return;const k=b.dataset.cf;STATE.decisions[k]?delete STATE.decisions[k]:STATE.decisions[k]={at:Date.now()};save();renderRadar()};
+
+/* ================= 交互装配 ================= */
+const openM=id=>document.querySelector(id).classList.add('open');
+const closeM=()=>document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'));
+document.addEventListener('click',e=>{if(e.target.hasAttribute('data-close')||e.target.classList.contains('modal'))closeM()});
+document.querySelector('#btnSyncCfg').onclick=()=>{cfgUrl.value=CFG.url||'';cfgKey.value=CFG.key||'';cfgRoom.value=CFG.room||'';cfgMsg.textContent='';openM('#mCfg')};
+document.querySelector('#cfgSave').onclick=async()=>{
+ CFG={url:cfgUrl.value.trim().replace(/\/$/,''),key:cfgKey.value.trim(),room:cfgRoom.value.trim()};
+ localStorage.setItem(LSCFG,JSON.stringify(CFG));cfgMsg.textContent='测试中…';
+ if(!SYNC.on()){cfgMsg.textContent='三项都填才会启用同步；已按仅本机保存处理。';SYNC.setStatus('','仅本机保存');return}
+ await SYNC.push(true);await SYNC.pull();
+ cfgMsg.textContent=document.querySelector('#syncText').textContent.startsWith('已同步')?'✓ 连接成功。在另一台设备填相同三项即可同步。':'✗ '+document.querySelector('#syncText').textContent+'（检查 URL、key，以及是否已建 trip_state 表）';
+};
+document.querySelector('#btnCode').onclick=()=>{codeBox.value='';codeMsg.textContent='';openM('#mCode')};
+document.querySelector('#codeGen').onclick=()=>{codeBox.value=btoa(unescape(encodeURIComponent(JSON.stringify(STATE))));codeBox.select();codeMsg.textContent='已生成，长按复制后发到另一台设备。'};
+document.querySelector('#codeImp').onclick=()=>{try{const s=JSON.parse(decodeURIComponent(escape(atob(codeBox.value.trim()))));if(!s.todos)throw new Error('格式不对');STATE=s;save();renderTodos(false);renderRadar();codeMsg.textContent='✓ 已导入并覆盖本机状态。'}catch(err){codeMsg.textContent='✗ 导入失败：'+err.message}};
+document.querySelector('#icsAll').onclick=e=>{e.preventDefault();const b=new Blob([buildICS()],{type:'text/calendar;charset=utf-8'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='us-west-2026.ics';a.click();setTimeout(()=>URL.revokeObjectURL(u),3000)};
+document.querySelector('#btnNotify').onclick=async e=>{e.preventDefault();if(!('Notification'in window))return alert('这个浏览器不支持通知');const p=await Notification.requestPermission();if(p==='granted'){new Notification('已开启行程提醒',{body:'页面打开时会提醒临近的截止项。要在关页面后也收到提醒，请用上面的日历导入。'});checkNotify()}};
+function checkNotify(){
+ if(!('Notification'in window)||Notification.permission!=='granted')return;
+ const seen=JSON.parse(localStorage.getItem('usTripNotified')||'[]'),now=NOW();
+ deadlines().forEach(x=>{const ms=x.at-now;if(ms>0&&ms<3*864e5&&!seen.includes(x.id)){new Notification('⏰ '+x.t,{body:leftText(ms)+'后到期 · '+x.d.slice(0,60)});seen.push(x.id)}});
+ localStorage.setItem('usTripNotified',JSON.stringify(seen));
+}
+SYNC.pull();setInterval(()=>SYNC.pull(),12e4);checkNotify();setInterval(checkNotify,36e5);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)SYNC.pull()});
 </script></body></html>
