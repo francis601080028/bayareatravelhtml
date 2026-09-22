@@ -197,12 +197,12 @@ function leftText(ms){if(ms<0)return'已过期';const d=Math.floor(ms/864e5),h=M
 
 /* ================= 状态与同步层 ================= */
 const LS='usTripStateV3', LSCFG='usTripSyncCfg';
-const DEFAULT_TODOS=['安装Waymo App并确认账户与支付可用','确认9/27 09:30 Cybertruck试驾门店及预约状态','9/26前联系目标银行确认非居民信用卡申请资格、分行预约和所需材料','9/26携带护照、美国签证、第二张带姓名的信用卡、美国地址证明、美国手机号（均先向银行确认）','确认电话卡套餐及其他待办卡种','核实9/28 15:30还车地点，并协调CS329Z下课后的还车安排','确认并处理10/3重叠住宿订单','预订Yosemite段租车','补充Seattle住宿','确认东京长转机行李是否直挂','确认CoDa门票／候补状态（Agent Hackathon已报名）','发出Seattle coffee chat邀约','准备SoloHer英文介绍与Demo'];
+const DEFAULT_TODOS=[["护照、美签有效",true],["机票已出票（AS591/NH117/NH963），首尔转机方案",true],["Palo Alto 小屋 9/25–10/3 已预订",true],["Yosemite View Lodge 10/3–10/6 已预订",true],["Yosemite 门票已办妥",true],["SFO 租车 9/25–9/27 延租已确认",true],["Yosemite 段租车 10/3–10/6 已预订",true],["eSIM/漫游、银行卡境外通知、美金现金、旅行保险",true],["美标插头、笔记本/充电器、优胜美地保暖衣物",true],["Cybertruck 试驾 9/27 09:30 Burlingame 已确认",true],["Luma 4 个活动已报名成功",true],["EVUS 登记确认/更新（持中国护照+美签必填）",true],["北京→首尔段：核对购票确认邮件的航司与航班号",true],["补录 10/3 进山前一晚的城市和酒店",true],["预订西雅图 10/6–10/8 酒店",true],["SFO 租车延租后总价、保存订单确认邮件",true],["补录 Yosemite 租车取还门店、保险、金额",true],["ThinkingAI Summit 审批跟进",false],["Empirical Methods（HAI 官网售罄）加入候补名单",false],["Measuring AI in the Real World（10/2）在 HAI 官网报名",false],["SHADOW AI 报名途径确认",false],["护照/美签/保险/EVUS 确认页截图云端备份",false]];
 let STATE=load();
 function load(){
  let s=null;try{s=JSON.parse(localStorage.getItem(LS)||'null')}catch(e){}
  if(!s){ let old=null;try{old=JSON.parse(localStorage.getItem('usTripTodosV2')||'null')}catch(e){}
-  s={todos:old||DEFAULT_TODOS.map((t,i)=>({id:1e12+i,t,done:false})),decisions:{},updatedAt:Date.now()} }
+  s={todos:old||DEFAULT_TODOS.map((t,i)=>({id:1e12+i,t:t[0],done:t[1]})),decisions:{},updatedAt:Date.now()} }
  s.todos=s.todos||[];s.decisions=s.decisions||{};return s;
 }
 function save(push=true){STATE.updatedAt=Date.now();localStorage.setItem(LS,JSON.stringify(STATE));if(push)SYNC.push()}
@@ -373,6 +373,14 @@ function renderTodos(push=true){
   STATE.rescheduleTesla20260920=true;localStorage.setItem(LS,JSON.stringify(STATE));
  }
 
+
+ // Checklist rebuilt from the user's 2026-09-23 in-chat selections (17/22 done).
+ if(!STATE.checklistReset20260923){
+  const fresh=[["护照、美签有效",true],["机票已出票（AS591/NH117/NH963），首尔转机方案",true],["Palo Alto 小屋 9/25–10/3 已预订",true],["Yosemite View Lodge 10/3–10/6 已预订",true],["Yosemite 门票已办妥",true],["SFO 租车 9/25–9/27 延租已确认",true],["Yosemite 段租车 10/3–10/6 已预订",true],["eSIM/漫游、银行卡境外通知、美金现金、旅行保险",true],["美标插头、笔记本/充电器、优胜美地保暖衣物",true],["Cybertruck 试驾 9/27 09:30 Burlingame 已确认",true],["Luma 4 个活动已报名成功",true],["EVUS 登记确认/更新（持中国护照+美签必填）",true],["北京→首尔段：核对购票确认邮件的航司与航班号",true],["补录 10/3 进山前一晚的城市和酒店",true],["预订西雅图 10/6–10/8 酒店",true],["SFO 租车延租后总价、保存订单确认邮件",true],["补录 Yosemite 租车取还门店、保险、金额",true],["ThinkingAI Summit 审批跟进",false],["Empirical Methods（HAI 官网售罄）加入候补名单",false],["Measuring AI in the Real World（10/2）在 HAI 官网报名",false],["SHADOW AI 报名途径确认",false],["护照/美签/保险/EVUS 确认页截图云端备份",false]];
+  STATE.todos=fresh.map((p,i)=>({id:1926092300000+i,t:p[0],done:p[1]}));
+  STATE.checklistReset20260923=true;
+  localStorage.setItem(LS,JSON.stringify(STATE));
+ }
  // Confirmed completed by the user's checklist screenshot.
  if(!STATE.checklistConfirmed20260919){
   const completed=['确认电话卡套餐及其他待办卡种','核实9/28 15:30还车地点，并协调CS329Z下课后的还车安排','确认并处理10/3重叠住宿订单','预订Yosemite段租车'];
