@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>湾区之行 · 9/25–10/10</title>
+<style>
+:root{--bg:#f6f3ec;--card:#ffffff;--ink:#232323;--muted:#8b8578;--line:#e9e2d4;
+--accent:#e0641a;--accent-soft:#fdeee2;--green:#177a5b;--green-soft:#e2f2ea;
+--amber:#a05a08;--amber-soft:#fdf3e0;--gray:#6b7280;--gray-soft:#f0efe9;
+--red:#b3401f;--red-soft:#fdeae4;--shadow:0 2px 14px rgba(60,45,20,.07);--r:16px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+font-size:15px;line-height:1.55;padding-bottom:86px}
+.app-header{background:#fff;border-bottom:1px solid var(--line);padding:18px 18px 14px;position:sticky;top:0;z-index:30}
+.app-header h1{margin:0;font-size:21px;letter-spacing:.02em}
+.app-header .sub{margin:3px 0 0;color:var(--muted);font-size:13px}
+.cd{display:inline-block;margin-top:9px;background:var(--accent-soft);color:var(--accent);
+font-weight:700;font-size:13px;padding:5px 12px;border-radius:999px}
+main{max-width:640px;margin:0 auto;padding:0 14px}
+.tab{display:none}.tab.active{display:block;animation:fade .18s ease}
+@keyframes fade{from{opacity:.4}to{opacity:1}}
+/* date strip */
+.date-strip{position:sticky;top:0;z-index:20;background:var(--bg);padding:10px 2px;
+display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.date-strip::-webkit-scrollbar{display:none}
+.ddot{flex:0 0 auto;width:52px;padding:7px 0 6px;border:1px solid var(--line);background:#fff;border-radius:12px;
+text-align:center;cursor:pointer;color:var(--ink)}
+.ddot .d1{font-size:11px;color:var(--muted)}.ddot .d2{font-size:16px;font-weight:700}
+.ddot.cur{border-color:var(--accent);background:var(--accent-soft)}
+.ddot.cur .d2{color:var(--accent)}
+.ddot .tod{font-size:10px;color:var(--accent);font-weight:700}
+/* day card */
+.day{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);margin:14px 0;overflow:hidden}
+.day-head{padding:15px 16px 11px;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.day-d{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.04em}
+.day-t{font-size:17px;font-weight:750;margin-top:2px}
+.today-badge{flex:0 0 auto;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px}
+.conflict{margin:12px 14px 0;background:var(--red-soft);border:1px solid #f3c4b3;color:var(--red);
+font-size:13px;border-radius:12px;padding:9px 12px}
+.timeline{padding:6px 16px 4px}
+.ev{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);position:relative}
+.ev:last-child{border-bottom:none}
+.ev-time{flex:0 0 86px;font-size:12.5px;font-weight:700;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+.ev-body{flex:1;min-width:0}
+.ev-title{font-weight:650;font-size:14.5px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ev-detail{color:#5b564a;font-size:13px;margin-top:3px}
+.badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.b-confirmed{background:var(--green-soft);color:var(--green)}
+.b-pending{background:var(--amber-soft);color:var(--amber)}
+.b-planned{background:var(--gray-soft);color:var(--gray)}
+.navbtn{flex:0 0 auto;align-self:center;font-size:12.5px;font-weight:700;color:var(--accent);
+border:1px solid var(--accent);border-radius:999px;padding:6px 12px;text-decoration:none;background:#fff}
+.day-more{padding:0 16px 6px}
+details{border-top:1px dashed var(--line);padding:9px 0}
+details summary{cursor:pointer;font-size:13.5px;font-weight:650;color:#4a4438;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"＋ ";color:var(--accent);font-weight:800}
+details[open] summary::before{content:"－ "}
+details .dtext{font-size:13.5px;color:#5b564a;margin-top:7px;white-space:pre-wrap}
+.route-btn{display:block;margin:4px 16px 16px;text-align:center;background:var(--ink);color:#fff;
+font-weight:700;font-size:14px;padding:11px;border-radius:12px;text-decoration:none}
+/* todo */
+.todo-head{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:15px 16px;margin:14px 0}
+.todo-head .t{font-weight:750;font-size:16px}
+.pbar{height:9px;background:var(--gray-soft);border-radius:99px;margin-top:10px;overflow:hidden}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#f59e0b);border-radius:99px;transition:width .3s}
+.pnum{font-size:12.5px;color:var(--muted);margin-top:6px}
+.titem{display:flex;gap:11px;align-items:flex-start;background:#fff;border-radius:14px;box-shadow:var(--shadow);
+padding:12px 14px;margin:9px 0;cursor:pointer}
+.titem input{appearance:none;-webkit-appearance:none;width:21px;height:21px;border:2px solid #cfc8b8;border-radius:7px;
+margin:1px 0 0;flex:0 0 auto;cursor:pointer;position:relative;background:#fff}
+.titem input:checked{background:var(--green);border-color:var(--green)}
+.titem input:checked::after{content:"✓";color:#fff;font-size:14px;font-weight:800;position:absolute;left:3px;top:-1px}
+.titem .tt{flex:1;font-size:14px}
+.titem.done .tt{text-decoration:line-through;color:var(--muted)}
+.ttag{flex:0 0 auto;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--gray-soft);color:var(--gray)}
+.ttag.pre{background:#e8eefc;color:#2f5fc0}
+.tsec{font-size:13px;font-weight:750;color:var(--muted);margin:16px 2px 4px}
+/* booking */
+.bk{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:14px 16px;margin:10px 0}
+.bk .r{font-size:12px;color:var(--muted);font-weight:700}
+.bk .n{font-size:16px;font-weight:750;margin:2px 0}
+.bk .d{font-size:13.5px;color:#5b564a;margin-top:5px}
+.bk .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.leg{border-top:1px dashed var(--line);padding:9px 0 3px;font-size:13.5px}
+.leg:last-child{padding-bottom:0}
+.leg .lt{display:flex;justify-content:space-between;font-weight:650}
+.leg .lm{color:var(--muted);font-size:12.5px}
+h2.sec{font-size:16px;margin:20px 2px 4px}
+/* tabbar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.96);
+backdrop-filter:blur(8px);border-top:1px solid var(--line);display:flex;
+padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+.tabbar button{flex:1;border:none;background:none;font-size:13.5px;font-weight:650;color:var(--muted);
+padding:9px 0;border-radius:12px;cursor:pointer;font-family:inherit}
+.tabbar button.active{color:var(--accent);background:var(--accent-soft)}
+.cnt{background:var(--red);color:#fff;font-size:11px;font-weight:800;border-radius:999px;padding:1px 7px;margin-left:4px}
+.ver{position:fixed;top:8px;right:10px;z-index:50;font-size:10.5px;color:#fff;background:#00000055;
+padding:3px 9px;border-radius:999px}
+.empty{color:var(--muted);text-align:center;padding:26px 0;font-size:14px}
+</style>
+</head>
+<body>
+<div class="ver">v2 实验版</div>
+<header class="app-header">
+  <h1>湾区之行</h1>
+  <p class="sub">9/25 – 10/10 · 旧金山湾区 / Yosemite / 西雅图 / 东京</p>
+  <span class="cd" id="countdown">…</span>
+</header>
+<main>
+  <section id="tab-trip" class="tab active">
+    <div class="date-strip" id="dateStrip"></div>
+    <div id="dayCards"></div>
+  </section>
+  <section id="tab-todo" class="tab">
+    <div class="todo-head">
+      <div class="t">行前待办</div>
+      <div class="pbar"><i id="pfill" style="width:0"></i></div>
+      <div class="pnum" id="pnum"></div>
+    </div>
+    <div class="tsec">未完成</div>
+    <div id="todoOpen"></div>
+    <div class="tsec">已完成</div>
+    <div id="todoDone"></div>
+  </section>
+  <section id="tab-book" class="tab">
+    <h2 class="sec">航班</h2><div id="flightCards"></div>
+    <h2 class="sec">住宿</h2><div id="hotelCards"></div>
+    <h2 class="sec">租车</h2><div id="rentalCards"></div>
+    <div style="height:10px"></div>
+  </section>
+</main>
+<nav class="tabbar">
+  <button data-tab="trip" class="active">🧭 行程</button>
+  <button data-tab="todo">✅ 待办<span class="cnt" id="todoBadge"></span></button>
+  <button data-tab="book">🎫 预订</button>
+</nav>
+<script>
+const DAYS = [
+{d:'DAY 01 · 9月25日 周五',t:'北京 → 首尔 → 旧金山',plan:'11:20 北京出发；19:15乘YP111；14:15抵达SFO；15:30 SFO 取车；傍晚入住 Palo Alto 后在 Stanford 周边开车约30分钟熟悉车辆；晚上 Palo Alto Baylands 看日落（免费，约10分钟车程）＋ University Ave 晚餐',mode:'租车',route:'SFO → Palo Alto 小屋',time:'35–60分钟 / 约23mi',cost:'过路费$0；油费约$5–8',map:'https://www.google.com/maps/dir/?api=1&origin=San+Francisco+International+Airport&destination=Palo+Alto+CA&travelmode=driving'},
+{"d": "DAY 02 · 9月26日 周六", "t": "Woodside山路 → Apple → 试驾 → The Tech", "plan": "上午 09:30–11:00 Woodside—CA-84 山路驾驶练习；11:30–13:00 Apple Park Visitor Center；13:00–14:00 午餐（Buck's of Woodside）后 15:00 Cybertruck试驾（PDT，已改到周六下午）；16:30–17:00 The Tech Interactive（周六17:00闭馆，时间紧）。Google 移到 9/30（周三）上午；Intel 周日闭馆，留在 10/1；办卡移到 9/28（周一）上午。", "mode": "租车自驾", "route": "Palo Alto → Woodside → CA-84 → Apple Park（Cupertino）→ Buck's of Woodside → Tesla San Jose（门店待补）→ The Tech Interactive", "time": "山路约90分钟；Apple 约1.5小时；试驾约1小时", "cost": "试驾、Apple 参观均免费；餐饮、油费另计", "map": "https://www.google.com/maps/dir/?api=1&origin=Palo+Alto+CA&destination=4180+El+Camino+Real+Palo+Alto+CA&waypoints=Woodside+Town+Hall%7CApple+Park+Visitor+Center+Cupertino&travelmode=driving", "sched": {"title": "南湾科技＋山路 · PDT", "src": "2026-09-24 调整：试驾改到周六 15:00", "items": [["09:00", "出发去 Woodside", "Palo Alto → Woodside，约25分钟"], ["09:30–11:00", "Woodside—CA-84 山路", "沿 CA-84 上行至 Skyline Blvd 交会处（Alice's Restaurant 附近作导航地标），休息后原路返回；有雾雨或疲劳则取消"], ["11:30–13:00", "Apple Park Visitor Center", "10600 N Tantau Ave；前往访客停车场；周末开放，具体营业时间出发前复核"], ["13:00–14:00", "午餐 · Buck's of Woodside", "3062 Woodside Rd, Woodside；硅谷 VC 传奇餐厅，建议提前订位；Apple Park 过去约25分钟"], ["15:00–16:00 · PDT", "Tesla Cybertruck试驾", "Tesla Palo Alto，4180 El Camino Real ｜ 已改到周六下午 3 点"], ["16:30–17:00", "The Tech Interactive", "201 S Market St, San Jose；周六17:00闭馆，仅走马观花约30分钟"]]}, "note": "试驾已改到周六 15:00。Google 移到 9/30（周三）上午；办卡移到 9/28（周一）上午。山路为规划，出发当天核对天气与道路管制。The Tech Interactive 周六 10:00–17:00，201 S Market St，成人票约$27起，建议官网提前购票；试驾后仅剩约30分钟。"},
+{"d": "DAY 03 · 9月27日 周日", "t": "旧金山一日游 · 拍照打卡", "plan": "白天往返旧金山，集中打卡拍照：金门大桥（Battery Spencer 对岸机位＋Crissy Field 海滩同框）→ 艺术宫 → PIER 39（午餐＋海狮）→ 九曲花街 → 六姐妹（Alamo Square）→ 唐人街牌楼快闪；九曲花街到六姐妹之间用 Waymo 当交通兼体验。16:30 前返程，天黑前回 Palo Alto。打卡点待用户从参考图中选定后再精调；晚上 Santana Row（San Jose）晚餐＋逛街。", "mode": "租车自驾＋Waymo 短途", "route": "Palo Alto → Battery Spencer（Marin Headlands）→ Crissy Field → 艺术宫 → PIER 39 → 九曲花街 → 六姐妹 → 唐人街 → Palo Alto", "time": "08:30 出发，16:30–17:30 返程；在旧金山市区约 6–7 小时；单程约 1 小时", "cost": "景点免费；金门大桥南向过桥费约$10；市区停车费较高；Waymo 按 App 实时报价", "map": "https://www.google.com/maps/dir/?api=1&origin=Palo+Alto+CA&destination=Palo+Alto+CA&waypoints=Battery+Spencer+Marin+Headlands%7CCrissy+Field+San+Francisco%7CPalace+of+Fine+Arts+San+Francisco%7CPIER+39+San+Francisco%7CLombard+Street+San+Francisco%7CPainted+Ladies+San+Francisco&travelmode=driving", "sched": {"title": "9/27 旧金山打卡 · PDT", "src": "2026-09-24 调整：改到周日白天独自前往；打卡点待选定", "items": [["08:30", "出发", "Palo Alto → 旧金山，约1小时"], ["09:30–10:15", "金门大桥 · Battery Spencer", "Marin Headlands 对岸经典机位，大桥全景；风大，多穿点"], ["10:30–11:15", "Crissy Field", "海滩与大桥同框，适合人像"], ["11:30–12:15", "艺术宫 Palace of Fine Arts", "罗马穹顶＋廊柱"], ["12:30–14:00", "PIER 39 午餐＋海狮", "海鲜＋看海狮；远眺恶魔岛"], ["14:15–15:00", "九曲花街 Lombard Street", "顶端俯拍九曲；可从这里叫 Waymo"], ["15:15–16:00", "六姐妹 Painted Ladies", "Alamo Square，彩色维多利亚房子＋市中心天际线"], ["16:00–16:30", "唐人街牌楼快闪", "时间充裕才去；随后返程"], ["16:30–17:30", "返程 Palo Alto", "天黑前回到"], ["18:30–20:30", "Santana Row 晚餐＋逛街", "San Jose 户外商业街，晚餐＋逛街，灯光出片"]]}, "note": "旧金山白天游览，注意随身财物；车内不要留可见行李。Waymo 覆盖旧金山市区，用 App 叫车。Battery Spencer 在金门大桥北岸，需开过桥；过桥费南向收取。打卡点待用户从参考图中选定后再精调路线。"},
+{"d": "DAY 04 · 9月28日 周一", "t": "上午办卡 → CS329Z ＋ Data Teams Mini-Hackathon", "plan": "09:30–11:30 办理美国电话卡与银行卡（银行工作日全开）；13:30–14:50 CS329Z（已获旁听许可）；17:00–20:00 Data Teams Mini-Hackathon（已确认）；14:50–17:00 Stanford 校园（Dish 徒步＋Cantor＋Bookstore）", "mode": "校内步行＋公交或打车", "route": "Packard 101 → 135 Constitution Dr, Menlo Park", "time": "按当天导航，预留换乘与签到时间", "cost": "车费以实时查询为准", "map": "https://www.google.com/maps/dir/?api=1&origin=Packard+Electrical+Engineering+Building+Stanford&destination=135+Constitution+Dr+Menlo+Park&travelmode=transit", "sched": {"title": "已确认 · PDT", "src": "用户旁听许可确认＋报名截图", "items": [["09:30–11:30", "办理美国电话卡＋银行卡", "运营商及银行门店待补；工作日银行全开"], ["13:30–14:50", "CS329Z · Engineering AI Agents", "Stanford Packard 101 ｜ 已获旁听许可"], ["14:50–17:00", "Stanford 校园", "Stanford Dish 徒步（约1小时，免费，俯瞰湾区）→ Cantor Arts Center（免费，罗丹雕塑）→ Bookstore；Hoover Tower 视时间"], ["17:00–20:00", "AI Agents for Data Teams · Mini-Hackathon", "135 Constitution Dr, Menlo Park ｜ 已确认参加"]]}, "note": "ThinkingAI 峰会仍待审核，12:00 开始且与课程冲突，暂不作为固定行程。17:00 已有活动，不再叠加 16:30 的能源讲座。 租车 9/25 SFO 取、10/3 12:00 在 Avis（4230 El Camino Real）还，今天不用还车。"},
+{"d": "DAY 05 · 9月29日 周二", "t": "Hackathon ＋ CS177（已批准）＋ Agent 工作坊", "plan": "09:30 黑客松（只参加上午）；13:30–15:20 CS177 旁听（CoDa B90，已批准，坐后排只观察）；CS193T 已放弃；下课后赴 Menlo Park 工作坊（15:00 开场，预计迟到）", "mode": "校内步行＋打车或公交", "route": "CoDa W450 → CoDa B90 → 135 Constitution Dr, Menlo Park", "time": "CS177 15:20 下课再赶工作坊更晚，实际抵达按实时导航，不承诺15:30", "cost": "车费以实时查询为准", "map": "https://www.google.com/maps/dir/?api=1&origin=CoDa+Stanford&destination=135+Constitution+Dr+Menlo+Park&travelmode=driving", "sched": {"title": "已确认报名／许可 · 9/29 已定去 CS177", "src": "用户确认＋活动官网", "items": [["09:30–19:30", "Collaborative Agent Hackathon @ Stanford", "CoDa W450，389 Jane Stanford Way ｜ 已确认参加；只参加上午，下午去 CS177"], ["13:30–15:20", "CS177 · Human Centered Product Management", "CoDa B90 ｜ 已获旁听许可（坐后排、仅观察）"], ["15:00–20:30", "Agentic Engineering & Multi-Agent Systems", "135 Constitution Dr, Menlo Park ｜ 已确认参加；下课后前往，预计迟到"]]}, "note": "已定方案：黑客松只参加上午（提前与主办方确认半天参与及组队方式；这并非主办方已批准的安排），13:30 去 CS177 旁听；15:20 下课后前往实际会场 135 Constitution Dr，不以 Menlo Park 车站作为终点。CS193T 已放弃。"},
+{d:'DAY 06 · 9月30日 周三',t:'Google 上午 ＋ CS329Z · RAG ＋ PyLadies AI 晚场',plan:'上午 10:00–11:30 Google Visitor Experience（Mountain View）；13:30–14:50 CS329Z；14:50–17:30 Mountain View Castro Street（Philz Coffee＋逛街）；18:00–20:30 PyLadies SF at Snowflake（Menlo Park）',mode:'公交/步行＋打车备选',route:'Palo Alto → Packard 101 → Snowflake Silicon Valley AI Hub（Menlo Park）',time:'按当天导航选择班次；18:00 到场签到',cost:'Marguerite免费；其他公交或打车费用以当天查询为准',map:'https://www.google.com/maps/dir/?api=1&origin=Packard+Electrical+Engineering+Building+Stanford+CA&destination=135+Constitution+Dr+Menlo+Park+CA+94025&travelmode=transit',sched:{title:'固定日程 · 加州当地时间 PDT',src:'cs329z.stanford.edu · luma.com/693643qu',items:[['10:00–11:30','Google Visitor Experience','2000 N Shoreline Blvd, Mountain View；周三 09:00–18:00；普通参观无需预约，免费停车'],['13:30–14:50','CS 329Z · Engineering AI Agents','Packard 101（David Packard EE Building, 350 Jane Stanford Way）｜ 本讲：Building Blocks — 检索增强生成 RAG，含动手搭 pipeline'],['14:50–17:30','Mountain View Castro Street','Philz Coffee（硅谷本土，招牌 Mint Mojito Iced Coffee）＋逛街；17:30 前往 Menlo Park 会场'],['18:00–20:30','PyLadies SF at Snowflake: Data Science in the Age of AI','Snowflake Silicon Valley AI Hub ｜ 135 Constitution Dr, 8th Floor, Menlo Park, CA 94025 ｜ 已确认参加（用户报名截图）']]},note:'<b>晚场已选 PyLadies</b>18:00 签到与交流，20:30 结束；主题为 AI 时代的数据科学、分析工作与系统设计。<a href="https://luma.com/693643qu" target="_blank" rel="noreferrer">活动详情与报名 ↗</a><br>加州时间 9/30 18:00–20:30（PDT）；北京时间 10/1 09:00–11:30。会场在 8 楼，自驾可在 135 号楼旁车库停车。<br>周一至周三不安排旧金山活动。CS329Z 已获旁听许可。课程后留在半岛，前往 Menlo Park；班次及车费出发当天核对。'},
+{"d": "DAY 07 · 10月1日 周四", "t": "CHM 计算机历史博物馆 → Intel Museum", "plan": "10:00–12:00 CHM（2小时）；午餐及转场；14:30–15:30 Intel Museum。Google 与 Apple 已改到 9/27（周日）。均为规划时段。晚间 SHADOW AI 仍待审核。若 Christina 批准 CS177 第二场旁听（13:30–15:20，CoDa B90），则下午去上课、放弃 Intel。", "mode": "自驾", "route": "Palo Alto → CHM（Mountain View）→ Intel Museum（Santa Clara）→ Palo Alto", "time": "参观共3小时；10:00–16:00 含午餐及转场，往返住宿交通另计", "cost": "Intel 参观及停车免费；CHM 需购票，票价以官网为准，购票待办", "map": "https://www.google.com/maps/dir/?api=1&origin=Palo+Alto+CA&destination=Palo+Alto+CA&waypoints=Computer+History+Museum+Mountain+View%7CIntel+Museum+Santa+Clara&travelmode=driving", "sched": {"title": "参观计划 · 加州当地时间 PDT", "src": "2026-09-24 调整：Google／Apple 移至 9/27", "items": [["10:00–12:00 · 2小时", "CHM · 计算机历史博物馆", "1401 N Shoreline Blvd, Mountain View；周三至周日 10:00–17:00；购票待办"], ["12:00–14:30", "午餐与前往 Intel", "含用餐、开车及停车缓冲；当天按实时路况调整"], ["14:30–15:30", "Intel Museum", "2200 Mission College Blvd；周一至周五 09:00–17:00；门票及停车免费，自助参观无需预约"], ["13:30–15:20 · 待确认", "CS177 第二场旁听（备选）", "CoDa B90，待 Christina 确认；若获批则下午去上课，Intel 放弃"]]}, "note": "Google、Apple 已移到 9/27（周日）；Intel 周末闭馆，故 CHM＋Intel 合并在周四。<a href=\"https://computerhistory.org/hours-admission/\" target=\"_blank\" rel=\"noreferrer\">CHM开放时间与购票</a> · <a href=\"https://www.intel.com/content/www/us/en/company-overview/intel-museum.html\" target=\"_blank\" rel=\"noreferrer\">Intel Museum 官网</a>。晚间 19:30–21:30 SHADOW AI 待审核、地点待定，通过后再核对转场。"},
+{"d": "DAY 08 · 10月2日 周五", "t": "Measuring AI in the Real World ＋ CoDa候补", "plan": "13:00–14:15 Measuring AI in the Real World；主讲Anastasios Angelopoulos。CoDa会议仍为候补，若获批需避开本讲座时段。", "mode": "公共交通＋校园步行", "route": "Palo Alto → Stanford Gates Computer Science Building, Room 119", "time": "建议12:45到场；交通时间以当天导航为准", "cost": "交通费用以实际出行为准；报名要求待确认", "map": "https://www.google.com/maps/dir/?api=1&origin=Palo+Alto+Transit+Center&destination=Gates+Computer+Science+Building+Stanford&travelmode=transit", "sched": {"title": "已加入计划 · PDT（未代报名）", "src": "Stanford HAI官网 · 2026-09-21核对", "items": [["上午 · 候补", "CoDa · Empirical Methods in the Age of AI", "原计划08:00签到、08:30报告；报名及付款尚未确认"], ["12:45 · 规划", "抵达Gates 119", "预留找教室和入场时间"], ["13:00–14:15", "Measuring AI in the Real World", "Anastasios Angelopoulos；Gates Computer Science Building, Room 119；353 Jane Stanford Way"]]}, "note": "本讲座由Stanford HAI与AIMS合办；已报名（免费，Eventbrite 订单已确认），按官网 13:00–14:15 预留（含拖堂交流）。CoDa若获候补，需取舍同期议程。<a target=\"_blank\" rel=\"noreferrer\" href=\"https://hai.stanford.edu/events/anastasios-angelopoulos-measuring-ai-in-the-real-world\">讲座官网</a>"},
+{"d": "DAY 09 · 10月3日 周六", "t": "Livermore 奥莱购物 → 进山前城市住宿（暂排）", "plan": "小屋退房；12:00 在 Avis（4230 El Camino Real）还车（9/25 SFO 取）。San Francisco Premium Outlets 购物时段待重排（原 10:30–15:00 与 12:00 还车冲突）。再前往进山前住宿城市；Yosemite 段租车（10/3–10/6）取车时间及住宿城市待补，需核对路线；与CoDa第二天不可同时完整参加。", "mode": "租车自驾", "route": "Palo Alto → San Francisco Premium Outlets, Livermore → 进山前住宿城市（待补）", "time": "到奥莱驾驶粗估60–90分钟；购物约4–4.5小时；后段车程待酒店确定", "cost": "购物按预算；油费、可能的桥费及停车费用按实际路线核实", "map": "https://www.google.com/maps/dir/?api=1&origin=Palo+Alto+CA&destination=San+Francisco+Premium+Outlets+Livermore&travelmode=driving", "note": "购物为建议日程。10/3 12:00 在 Avis（4230 El Camino Real）还车，还车后无车，奥莱购物时段待重排。品牌优先：lululemon、Coach、Tory Burch、Longchamp、Polo Ralph Lauren；Gucci／Prada按具体款式和到手价比较。门店库存、折扣及当日营业时间以官网和现场为准。官方目录：https://www.premiumoutlets.com/outlet/san-francisco/stores"},
+{d:'DAY 10 · 10月4日 周日',t:'Yosemite Valley',plan:'Visitor Center、Cook’s Meadow、Lower Yosemite Fall、Valley View',mode:'园区自驾＋接驳',route:'El Portal → Yosemite Valley → El Portal',time:'单程约25–40分钟',cost:'优胜美地门票已办妥（用户9/19确认）；实付金额及票种待补；园内接驳免费',map:'https://www.google.com/maps/dir/?api=1&origin=Yosemite+View+Lodge&destination=Yosemite+Valley+Visitor+Center&travelmode=driving'},
+{d:'DAY 11 · 10月5日 周一',t:'Yosemite 完整游玩日',plan:'Glacier Point开放则走高处；否则留谷底短线',mode:'景区自驾',route:'El Portal → Glacier Point → Tunnel View → Valley → El Portal',time:'驾驶约3.5–4.5小时 / 110–130mi',cost:'油费约$18–25；入园费已覆盖',map:'https://www.google.com/maps/dir/?api=1&origin=Yosemite+View+Lodge&destination=Yosemite+View+Lodge&waypoints=Glacier+Point%7CTunnel+View%7CYosemite+Valley&travelmode=driving'},
+{d:'DAY 12 · 10月6日 周二',t:'Yosemite → SFO → Seattle',plan:'早出发；19:11搭AS591；21:25抵达SEA',mode:'自驾＋航班',route:'El Portal → SFO；SEA → Seattle住宿',time:'开车约4–5小时；Link约35–50分钟',cost:'油费$30–45；可能桥费$0–9；Link $3',map:'https://www.google.com/maps/dir/?api=1&origin=Yosemite+View+Lodge&destination=San+Francisco+International+Airport&travelmode=driving'},
+{d:'DAY 13 · 10月7日 周三',t:'Seattle 科技生态',plan:'Amazon朋友午餐；AI2 / Madrona / PSL；Kerry Park',mode:'公交＋步行',route:'Downtown/SLU → AI2 → Pioneer Square → Kerry Park',time:'各段10–30分钟',cost:'Link/公交约$3/次；全天约$6–12',map:'https://www.google.com/maps/dir/?api=1&origin=Amazon+Spheres+Seattle&destination=Kerry+Park+Seattle&waypoints=Allen+Institute+for+AI%7CPioneer+Square+Seattle&travelmode=transit'},
+{d:'DAY 14 · 10月8日 周四',t:'Seattle 半日＋返程',plan:'上午轻量Coffee Chat；16:30搭NH117飞东京',mode:'公共交通',route:'Seattle住宿 → SEA机场',time:'Link约35–50分钟',cost:'成人单程$3',map:'https://www.google.com/maps/dir/?api=1&origin=Downtown+Seattle&destination=Seattle-Tacoma+International+Airport&travelmode=transit'},
+{d:'DAY 15 · 10月9日 周五',t:'东京羽田长转机',plan:'19:00抵达HND；22小时15分跨天转机',mode:'机场/可选市区',route:'HND → 酒店或东京市区（若入境）',time:'京急到品川约15–25分钟',cost:'约¥330起；以实际路线为准',map:'https://www.google.com/maps/dir/?api=1&origin=Haneda+Airport&destination=Shinagawa+Station&travelmode=transit'},
+{d:'DAY 16 · 10月10日 周六',t:'东京 → 北京',plan:'17:15搭NH963；20:15抵达北京首都T3',mode:'机场内',route:'住宿/市区 → HND T3',time:'建议起飞前3小时到达',cost:'按住宿位置计算',map:'https://www.google.com/maps/dir/?api=1&origin=Shinagawa+Station&destination=Haneda+Airport+Terminal+3&travelmode=transit'}
+];
+const JOURNEYS = [
+ {n:'01 / 03',date:'9月25日',title:'北京 → 首尔 → 旧金山',price:'¥4,003',legs:[['11:20','PEK → ICN','航空公司/航班号：原截图未显示','14:20'],['19:15','ICN → SFO','普莱米娅航空 · YP111','14:15 同日抵达']]},
+ {n:'02 / 03',date:'10月6日',title:'旧金山 → 西雅图',price:'¥353',legs:[['19:11','SFO → SEA','阿拉斯加航空 · AS591','21:25']]},
+ {n:'03 / 03',date:'10月8–10日',title:'西雅图 → 东京 → 北京',price:'¥3,400',legs:[['16:30','SEA → HND','全日空 · NH117','10月9日 19:00'],['10月10日 17:15','HND → PEK','全日空 · NH963','20:15']]}
+];
+const TODOS_SEED = [{"t": "护照、美签有效", "done": true}, {"t": "机票已出票（AS591/NH117/NH963），首尔转机方案", "done": true}, {"t": "Palo Alto 小屋 9/25–10/3 已预订", "done": true}, {"t": "Yosemite View Lodge 10/3–10/6 已预订", "done": true}, {"t": "Yosemite 门票已办妥", "done": true}, {"t": "SFO 租车已延租：9/25 15:30 SFO 取车，10/3 12:00 还车（Avis 4230 El Camino Real）", "done": true}, {"t": "Yosemite 段租车 10/3–10/6 已预订", "done": true}, {"t": "eSIM/漫游、银行卡境外通知、美金现金、旅行保险", "done": true}, {"t": "美标插头、笔记本/充电器、优胜美地保暖衣物", "done": true}, {"t": "Cybertruck 试驾已改到 9/26 周六 15:00（圣何塞，门店待补）", "done": true}, {"t": "Luma 4 个活动已报名成功", "done": true}, {"t": "EVUS 登记确认/更新（持中国护照+美签必填）", "done": true}, {"t": "北京→首尔段：核对购票确认邮件的航司与航班号", "done": true}, {"t": "补录 10/3 进山前一晚的城市和酒店", "done": true}, {"t": "预订西雅图 10/6–10/8 酒店", "done": true}, {"t": "SFO 租车延租后总价、保存订单确认邮件", "done": true}, {"t": "补录 Yosemite 租车取还门店、保险、金额", "done": true}, {"t": "ThinkingAI Summit 审批跟进", "done": false}, {"t": "Empirical Methods（HAI 官网售罄）加入候补名单", "done": false}, {"t": "Measuring AI in the Real World（10/2）在 HAI 官网报名", "done": false}, {"t": "SHADOW AI 报名途径确认", "done": false}, {"t": "护照/美签/保险/EVUS 确认页截图云端备份", "done": false}];
+const HOTELS = [{"range": "9/25 – 10/3 · 8晚", "name": "Palo Alto 私人小屋", "status": "confirmed", "detail": "已预订；10/3 12:00 退房。独立入口、独立卫生间。价格调整后总价待补。"}, {"range": "10/3 · 1晚", "name": "进山前城市住宿", "status": "pending", "detail": "城市/酒店待补（Mariposa Lodge 已取消）。"}, {"range": "10/3 – 10/6 · 3晚", "name": "Yosemite View Lodge", "status": "confirmed", "detail": "11136 CA-140, El Portal。Deluxe River View · 2 Queen Beds。15:00后入住，11:00前退房。9/26 15:00前免费取消。"}, {"range": "10/6 – 10/8 · 2晚", "name": "Seattle 住宿（朋友家）", "status": "confirmed", "detail": "用户确认可住朋友家。详细地址请保存在手机私密资料中。"}];
+const RENTAL = [{"range": "9/25 – 10/3", "name": "SFO 租车（Avis）", "status": "confirmed", "detail": "9/25 15:30 SFO 取车 → 10/3 12:00 还车，Avis 4230 El Camino Real。延租后总价待补，记得保存订单确认邮件。"}, {"range": "10/3 – 10/6", "name": "Yosemite 段租车", "status": "pending", "detail": "已预订；取还门店、保险、金额待补。"}];
+
+/* ---------- dates ---------- */
+DAYS.forEach(d=>{
+  const m=(d.d||'').match(/(\d+)月(\d+)日/);
+  d._date=m?new Date(2026,+m[1]-1,+m[2]):null;
+  d._md=m?m[1]+'/'+m[2]:'';
+  d._wd=(d.d||'').match(/周[一二三四五六日]/)?(d.d.match(/周[一二三四五六日]/)[0]):'';
+});
+const now0=new Date(); now0.setHours(0,0,0,0);
+let curIdx=DAYS.findIndex(d=>d._date&&d._date>=now0);
+if(curIdx<0)curIdx=DAYS.length-1;
+(function(){
+  const dep=new Date(2026,8,25), el=document.getElementById('countdown');
+  const days=Math.round((dep-now0)/864e5);
+  if(days>0)el.textContent='✈️ 还有 '+days+' 天出发';
+  else if(days===0)el.textContent='✈️ 今天出发！';
+  else{const n=Math.min(-days+1,16);el.textContent=n<=16?('📍 行程第 '+n+' 天'):'🏁 行程已结束';}
+})();
+
+/* ---------- status & conflicts ---------- */
+function statusOf(t){
+  t=t||'';
+  if(/待补|待定|待确认|待协调|待核实|待重排|待查|TBD/.test(t))return['pending','待定'];
+  if(/已确认|已批准|已预订|已报名|已获|已延租|已办妥|已取消/.test(t))return['confirmed','已确认'];
+  return['planned','计划中'];
+}
+function toMin(h,m){return +h*60 + +m;}
+function parseRange(t){
+  t=t||'';
+  let m=t.match(/(\d{1,2}):(\d{2})\s*[–—-]\s*(\d{1,2}):(\d{2})/);
+  if(m)return[toMin(m[1],m[2]),toMin(m[3],m[4])];
+  m=t.match(/(\d{1,2}):(\d{2})/);
+  if(m)return[toMin(m[1],m[2]),toMin(m[1],m[2])]; /* 单时间点视为零时长 */
+  return null;
+}
+function findConflicts(items){
+  const rs=items.map((it,i)=>({i,r:parseRange(it[0]),t:it[1]})).filter(x=>x.r);
+  const out=[];
+  for(let a=0;a<rs.length;a++)for(let b=a+1;b<rs.length;b++){
+    const A=rs[a],B=rs[b];
+    if(A.r[0]<B.r[1]&&B.r[0]<A.r[1])out.push('「'+A.t+'」与「'+B.t+'」时间重叠');
+  }
+  return out;
+}
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+/* ---------- trip tab ---------- */
+(function(){
+  const strip=document.getElementById('dateStrip');
+  strip.innerHTML=DAYS.map((d,i)=>
+    '<button class="ddot'+(i===curIdx?' cur':'')+'" data-i="'+i+'">'+
+    '<div class="d1">'+esc(d._wd)+'</div><div class="d2">'+esc(d._md.split('/')[1]||'')+'</div>'+
+    (i===curIdx?'<div class="tod">今天</div>':'')+'</button>').join('');
+  strip.querySelectorAll('.ddot').forEach(b=>b.addEventListener('click',()=>{
+    document.getElementById('day-'+b.dataset.i).scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+
+  const wrap=document.getElementById('dayCards');
+  wrap.innerHTML=DAYS.map((d,i)=>{
+    const items=(d.sched&&d.sched.items)||[];
+    const conf=findConflicts(items);
+    const dayPending=statusOf((d.note||'')+' '+(d.plan||'')+' '+(d.t||''))[0]==='pending';
+    const evs=items.map(it=>{
+      const[cls,label]=statusOf(it[1]+' '+it[2]);
+      const q=encodeURIComponent(it[1]);
+      return '<div class="ev"><div class="ev-time">'+esc(it[0])+'</div>'+
+        '<div class="ev-body"><div class="ev-title">'+esc(it[1])+
+        ' <span class="badge b-'+cls+'">'+label+'</span></div>'+
+        (it[2]?'<div class="ev-detail">'+esc(it[2])+'</div>':'')+'</div>'+
+        '<a class="navbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+q+'">导航</a></div>';
+    }).join('');
+    const more=[];
+    if(d.plan)more.push('<details><summary>今日计划</summary><div class="dtext">'+esc(d.plan)+'</div></details>');
+    if(d.note)more.push('<details><summary>备注</summary><div class="dtext">'+esc(d.note)+'</div></details>');
+    if(d.cost||d.time)more.push('<details><summary>时间 / 花费</summary><div class="dtext">'+esc([d.time,d.cost].filter(Boolean).join('\n'))+'</div></details>');
+    return '<article class="day" id="day-'+i+'">'+
+      '<div class="day-head"><div><div class="day-d">'+esc(d.d||'')+'</div>'+
+      '<div class="day-t">'+esc(d.t||'')+'</div></div>'+
+      '<div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">'+
+      (i===curIdx?'<span class="today-badge">今天</span>':'')+
+      (dayPending?'<span class="badge b-pending">有待定</span>':'')+'</div></div>'+
+      (conf.length?'<div class="conflict">⚠️ '+conf.map(esc).join('<br>⚠️ ')+'</div>':'')+
+      (evs?'<div class="timeline">'+evs+'</div>':'<div class="empty">本日暂无细化日程</div>')+
+      (more.length?'<div class="day-more">'+more.join('')+'</div>':'')+
+      (d.map?'<a class="route-btn" target="_blank" rel="noopener" href="'+esc(d.map)+'">🗺 今日路线导航</a>':'')+
+      '</article>';
+  }).join('');
+  setTimeout(()=>{
+    const el=document.getElementById('day-'+curIdx);
+    if(el)el.scrollIntoView({block:'start'});
+  },60);
+})();
+
+/* ---------- todo tab ---------- */
+const LS='baytrip_todos_v2';
+let todos;
+try{todos=JSON.parse(localStorage.getItem(LS))||null;}catch(e){todos=null;}
+if(!Array.isArray(todos)||!todos.length)todos=TODOS_SEED.map((x,i)=>({id:i,t:x.t,done:!!x.done}));
+function todoTag(t){return /护照|机票|EVUS|eSIM|漫游|保险|插头|预订|出票|截图|备份|现金|银行卡|确认页/.test(t)?['pre','行前']:['mid','行中'];}
+function renderTodos(){
+  const open=document.getElementById('todoOpen'),done=document.getElementById('todoDone');
+  const mk=x=>{
+    const[cls,label]=todoTag(x.t);
+    return '<label class="titem'+(x.done?' done':'')+'"><input type="checkbox" data-id="'+x.id+'"'+(x.done?' checked':'')+'>'+
+      '<span class="tt">'+esc(x.t)+'</span><span class="ttag '+cls+'">'+label+'</span></label>';
+  };
+  const o=todos.filter(x=>!x.done),d=todos.filter(x=>x.done);
+  open.innerHTML=o.length?o.map(mk).join(''):'<div class="empty">🎉 全部完成</div>';
+  done.innerHTML=d.length?d.map(mk).join(''):'<div class="empty">暂无</div>';
+  const pct=Math.round(d.length/todos.length*100);
+  document.getElementById('pfill').style.width=pct+'%';
+  document.getElementById('pnum').textContent='已完成 '+d.length+' / '+todos.length+'（'+pct+'%）';
+  const badge=document.getElementById('todoBadge');
+  badge.textContent=o.length; badge.style.display=o.length?'':'none';
+  document.querySelectorAll('.titem input').forEach(c=>c.addEventListener('change',()=>{
+    const it=todos.find(x=>x.id==c.dataset.id); if(it)it.done=c.checked;
+    try{localStorage.setItem(LS,JSON.stringify(todos));}catch(e){}
+    renderTodos();
+  }));
+}
+renderTodos();
+
+/* ---------- booking tab ---------- */
+(function(){
+  document.getElementById('flightCards').innerHTML=JOURNEYS.map(j=>
+    '<div class="bk"><div class="row"><span class="r">JOURNEY '+esc(j.n)+' · '+esc(j.date)+'</span>'+
+    '<span class="badge b-confirmed">已出票</span></div>'+
+    '<div class="n">'+esc(j.title)+'</div><div class="r">'+esc(j.price||'')+'</div>'+
+    j.legs.map(l=>'<div class="leg"><div class="lt"><span>'+esc(l[0])+' '+esc(l[1])+'</span><span>'+esc(l[3]||'')+'</span></div>'+
+    '<div class="lm">'+esc(l[2]||'')+'</div></div>').join('')+'</div>').join('');
+  const card=x=>{const[cls,label]=x.status==='confirmed'?['confirmed','已确认']:['pending','待定'];
+    return '<div class="bk"><div class="row"><span class="r">'+esc(x.range)+'</span>'+
+    '<span class="badge b-'+cls+'">'+label+'</span></div>'+
+    '<div class="n">'+esc(x.name)+'</div><div class="d">'+esc(x.detail)+'</div></div>';};
+  document.getElementById('hotelCards').innerHTML=HOTELS.map(card).join('');
+  document.getElementById('rentalCards').innerHTML=RENTAL.map(card).join('');
+})();
+
+/* ---------- tabbar ---------- */
+document.querySelectorAll('.tabbar button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tabbar button').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById('tab-'+b.dataset.tab).classList.add('active');
+  window.scrollTo({top:0});
+}));
+</script>
+</body>
+</html>
